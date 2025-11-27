@@ -1,8 +1,10 @@
-# Ignore large media files
-*.mp4
+# Ignore large media files (except videoplayback.mp4)
 *.mov
 *.avi
 *.mkv
+
+# Allow the specific video file for landing page
+!videoplayback.mp4
 
 # Ignore very large images (over 2MB)
 IMG_20251125_190922.jpg
