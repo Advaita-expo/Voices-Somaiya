@@ -1,0 +1,23 @@
+# Ignore large media files
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Ignore very large images (over 2MB)
+IMG_20251125_190922.jpg
+Aiza Mistry Content & PR.jpg
+Nitin Choudhary_.jpg
+Saachi Chunekar_PR department.jpg
+
+# Optional: ignore all large images and replace with optimized versions
+# *.jpg
+# *.png
+# *.HEIC
+
+# Node modules (if you add any)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
