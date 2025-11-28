@@ -455,6 +455,97 @@
         .issue-card:hover::before {
             opacity: 1;
         }
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease-out;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .bounce-in {
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px);
+            }
+            50% {
+                transform: translate(0, -10px);
+            }
+            100% {
+                transform: translate(0, -0px);
+            }
+        }
+
+        /* Team member card hover animation */
+        .team-card {
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(157, 34, 53, 0.15);
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -2094,6 +2185,77 @@
                 currentYearBtn.classList.add('active');
             }
             renderIssues(currentYear);
+        });
+    </script>
+
+    <!-- Animation JavaScript -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation classes to elements
+            const animateElements = [
+                { selector: '.text-center h2', className: 'fade-in' },
+                { selector: '.somaiya-bg', className: 'scale-in' },
+                { selector: 'p', className: 'fade-in' },
+                { selector: '.team-member-card', className: 'scale-in team-card' },
+                { selector: '.issue-card', className: 'slide-in-left' },
+                { selector: 'img', className: 'fade-in' }
+            ];
+
+            animateElements.forEach(({ selector, className }) => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach((el, index) => {
+                    el.classList.add(className);
+                    el.style.animationDelay = `${index * 0.1}s`;
+                    observer.observe(el);
+                });
+            });
+
+            // Add floating animation to logos
+            const logos = document.querySelectorAll('img[alt*="Logo"], img[alt*="logo"]');
+            logos.forEach(logo => {
+                logo.classList.add('floating');
+            });
+
+            // Add bounce animation to social icons
+            const socialIcons = document.querySelectorAll('a[href*="instagram"], a[href*="youtube"], a[href*="linkedin"]');
+            socialIcons.forEach((icon, index) => {
+                icon.addEventListener('mouseenter', () => {
+                    icon.style.animation = 'bounceIn 0.6s ease-out';
+                });
+                icon.addEventListener('animationend', () => {
+                    icon.style.animation = '';
+                });
+            });
+
+            // Stagger animations for team members
+            const teamMembers = document.querySelectorAll('.team-member-card');
+            teamMembers.forEach((member, index) => {
+                member.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const video = document.querySelector('video');
+            if (video) {
+                video.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
         });
     </script>
 </body>
