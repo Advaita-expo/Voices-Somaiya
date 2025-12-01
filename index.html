@@ -9,6 +9,38 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
 
+        /* Edge Browser Compatibility & Global Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Ensure all sections take full width */
+        section {
+            width: 100%;
+            max-width: none;
+        }
+        
+        /* Edge-specific fixes */
+        @supports (-ms-ime-align: auto) {
+            .container {
+                width: 100%;
+            }
+        }
+
         /* Somaiya Brand Colors (Approximate based on reference) */
         :root {
             --somaiya-red: #9d2235; 
@@ -67,6 +99,13 @@
         .scroll-container {
             overflow: hidden;
             position: relative;
+            width: 100%;
+        }
+        
+        /* Prevent horizontal scroll issues in Edge */
+        .container {
+            max-width: 100%;
+            width: 100%;
         }
 
         .scroll-content {
@@ -235,6 +274,15 @@
         .team-scroll-container {
             position: relative;
             overflow: hidden;
+            width: 100%;
+        }
+        
+        /* Edge browser specific fixes for team cards */
+        @supports (-ms-ime-align: auto) {
+            .team-card, .leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card {
+                width: 200px;
+                flex-shrink: 0;
+            }
         }
 
         /* Ensure team cards maintain their width in the scrolling container */
@@ -266,25 +314,6 @@
         .crew-card {
             flex: 0 0 auto;
             min-width: 200px;
-        }
-
-        /* Add LinkedIn icon to all team cards */
-        .team-card-content::after {
-            content: '';
-            display: block;
-            margin-top: 8px;
-            text-align: center;
-        }
-
-        .linkedin-icon {
-            display: inline-block;
-            margin-top: 8px;
-            color: #0077b5;
-            transition: color 0.3s ease;
-        }
-
-        .linkedin-icon:hover {
-            color: #005582;
         }
 
         /* Modal Styles */
@@ -485,40 +514,40 @@
         /* Professional Animation Classes */
         .fade-in {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(50px) scale(0.95);
             transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             filter: blur(2px);
         }
 
         .fade-in.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
             filter: blur(0px);
         }
 
         .slide-in-left {
             opacity: 0;
-            transform: translateX(-60px) rotateY(-5deg);
-            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            filter: blur(1px);
+            transform: translateX(-80px) rotateY(-8deg) scale(0.95);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: blur(2px);
         }
 
         .slide-in-left.visible {
             opacity: 1;
-            transform: translateX(0) rotateY(0deg);
+            transform: translateX(0) rotateY(0deg) scale(1);
             filter: blur(0px);
         }
 
         .slide-in-right {
             opacity: 0;
-            transform: translateX(60px) rotateY(5deg);
-            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            filter: blur(1px);
+            transform: translateX(80px) rotateY(8deg) scale(0.95);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: blur(2px);
         }
 
         .slide-in-right.visible {
             opacity: 1;
-            transform: translateX(0) rotateY(0deg);
+            transform: translateX(0) rotateY(0deg) scale(1);
             filter: blur(0px);
         }
 
@@ -585,6 +614,27 @@
             }
         }
 
+        /* Edge-compatible grid and flex fixes */
+        @supports (-ms-ime-align: auto) {
+            .grid {
+                display: -ms-grid;
+            }
+            
+            .md\:grid-cols-2 {
+                -ms-grid-columns: 1fr 1fr;
+            }
+            
+            .lg\:grid-cols-3 {
+                -ms-grid-columns: 1fr 1fr 1fr;
+            }
+        }
+        
+        /* Ensure no content exceeds viewport width */
+        img, video, iframe, object, embed {
+            max-width: 100%;
+            height: auto;
+        }
+        
         /* Professional team member card hover animation */
         .team-card {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -704,16 +754,67 @@
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                 <!-- Instagram Post Embed -->
-                <div class="order-1 md:order-1">
+                <div class="order-1 md:order-1 slide-in-left">
                     <div class="w-full max-w-md mx-auto">
-                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C-QGCsUoz1B/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; min-width:280px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:12px;"> <a href="https://www.instagram.com/p/C-QGCsUoz1B/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 35px; margin-right: 12px; width: 35px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 12px; margin-bottom: 5px; width: 90px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 12px; width: 55px;"></div></div></div><div style="padding: 16% 0;"></div> <div style="display:block; height:45px; margin:0 auto 10px; width:45px;"><svg width="45px" height="45px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 6px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:13px; font-style:normal; font-weight:550; line-height:16px;">View this post on Instagram</div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:13px; line-height:15px; margin-bottom:0; margin-top:6px; overflow:hidden; padding:6px 0 5px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/C-QGCsUoz1B/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:13px; font-style:normal; font-weight:normal; line-height:15px; text-decoration:none;" target="_blank">A post shared by Somaiya Voices (@somaiyavoices)</a></p></div></blockquote>
-                        <script async src="//www.instagram.com/embed.js"></script>
+                        <!-- Instagram Card Fallback -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden border">
+                            <div class="p-4">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 p-0.5">
+                                        <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                            <i data-lucide="instagram" class="w-6 h-6 text-gray-800"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h3 class="font-semibold text-gray-900">somaiyavoices</h3>
+                                        <p class="text-sm text-gray-500">3,376 followers</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Post Image Placeholder -->
+                                <div class="bg-gray-100 rounded-lg h-64 mb-4 flex items-center justify-center relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-[#9d2235] to-[#7a1b29] opacity-90"></div>
+                                    <div class="relative text-center text-white p-6">
+                                        <div class="mb-4">
+                                            <img src="Voices logo white.png" alt="Voices Logo" class="h-16 mx-auto mb-2" onerror="this.style.display='none'">
+                                        </div>
+                                        <h4 class="text-lg font-bold mb-2">VOICES COUNCIL</h4>
+                                        <p class="text-sm opacity-90">2024-25</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-2 mb-4">
+                                    <p class="text-sm text-gray-800">
+                                        <span class="font-semibold">somaiyavoices</span> With great enthusiasm, we are very proud to introduce you all to our Voices Council for the year 2024-25! 🎉
+                                    </p>
+                                    <p class="text-sm text-gray-600">
+                                        We, the team behind Somaiya Voices are honored to have this great opportunity and we look forward to making this year a memorable one... <span class="text-[#9d2235]">more</span>
+                                    </p>
+                                </div>
+                                
+                                <div class="flex items-center justify-between text-gray-500 text-sm">
+                                    <div class="flex items-center space-x-4">
+                                        <button class="flex items-center space-x-1 hover:text-red-500 transition">
+                                            <i data-lucide="heart" class="w-4 h-4"></i>
+                                            <span>89</span>
+                                        </button>
+                                        <button class="flex items-center space-x-1 hover:text-blue-500 transition">
+                                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                            <span>6</span>
+                                        </button>
+                                    </div>
+                                    <a href="https://www.instagram.com/somaiyavoices/" target="_blank" class="text-[#9d2235] hover:text-[#7a1b29] font-medium text-sm transition">
+                                        View on Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- About Us Content -->
                 <!-- Updated with new narrative content -->
-                <div class="order-2 md:order-2">
+                <div class="order-2 md:order-2 slide-in-right">
                     <p class="text-lg text-gray-700 leading-relaxed mb-6">
                         <span class="font-bold text-gray-900">Voices</span> is the <span class="font-semibold text-[#9d2235]">student-led media body of Somaiya</span> created <span class="font-semibold">for the students, from the students, and by the students</span>. It exists to capture the <span class="font-semibold text-[#9d2235]">heartbeat of our campus</span> and everything that makes Somaiya feel alive. We document the <span class="font-semibold">moments we celebrate, the stories that quietly unfold in the background</span>, and the experiences that shape us in ways we often realise only much later.
                     </p>
@@ -843,51 +944,36 @@
                     <div class="scroll-content" id="teamScroll">
                         <!-- Chief -->
                         <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-[#9d2235] to-[#7a1b29] flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">AK</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Aaysha Khan</h4>
                                 <p class="text-xs text-[#9d2235] font-semibold">CHIEF</p>
                                 <p class="text-xs text-gray-600">KJSSC</p>
-                                <div class="mt-2 text-center">
-                                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         
                         <!-- Co-Chief -->
                         <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-[#9d2235] to-[#7a1b29] flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">PG</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Priyansh Gupta</h4>
                                 <p class="text-xs text-[#9d2235] font-semibold">CO-CHIEF</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
-                                <div class="mt-2">
-                                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Shlok Chauhan.png" alt="Shlok Chauhan" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Shlok Chauhan</h4>
                                 <p class="text-xs text-[#9d2235] font-semibold">CONTENT & PR HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
-                                <div class="mt-2">
-                                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
@@ -899,65 +985,45 @@
                                 <h4 class="text-base font-bold text-gray-900">Nirek Ganguly</h4>
                                 <p class="text-xs text-[#9d2235] font-semibold">OPERATIONS HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
-                                <div class="mt-2">
-                                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">IJ</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Ishika.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Ishika Jain</h4>
                                 <p class="text-xs text-[#9d2235] font-semibold">GRAPHICS HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
-                                <div class="mt-2">
-                                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">PG</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Priyansh Gupta</h4>
                                 <p class="text-xs text-[#9d2235] font-semibold">SOCIAL MEDIA HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
-                                <div class="mt-2">
-                                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Kaustubh Rewankar.jpg" alt="Kaustubh Rewankar" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Kaustubh_new.jpg" alt="Kaustubh Rewankar" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Kaustubh Rewankar</h4>
                                 <p class="text-xs text-[#9d2235] font-semibold">PHOTO & VIDEO HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
-                                <div class="mt-2">
-                                    <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
                         <div class="sub-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Sweekriti Maheshwari.jpg" alt="Sweekriti Maheshwari" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Sweekriti.jpg" alt="Sweekriti Maheshwari" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Sweekriti Maheshwari</h4>
@@ -968,7 +1034,7 @@
 
                         <div class="sub-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Rutwa Nimkar_PR Department.jpg" alt="Rutwa Nimkar" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/3.jpg" alt="Rutwa Nimkar" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Rutwa Nimkar</h4>
@@ -979,7 +1045,7 @@
 
                         <div class="sub-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Megh Bame.jpg" alt="Megh Bame" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Megh.jpg" alt="Megh Bame" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Megh Bame</h4>
@@ -991,7 +1057,7 @@
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Aiza Mistry Content & PR.jpg" alt="Aiza Mistry" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Aiza.jpg" alt="Aiza Mistry" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Aiza Mistry</h4>
@@ -1002,7 +1068,7 @@
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Christina Dcunha_content.jpg" alt="Christina Dcunha" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Christina.jpg" alt="Christina Dcunha" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Christina Dcunha</h4>
@@ -1012,8 +1078,8 @@
                         </div>
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">PM</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Prachi.jpg" alt="Prachi Mishra" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Prachi Mishra</h4>
@@ -1023,8 +1089,8 @@
                         </div>
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">VB</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Viplav.jpg" alt="Viplav Bhanarkar" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Viplav Bhanarkar</h4>
@@ -1035,7 +1101,7 @@
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Viraj Ravani.jpg" alt="Viraj Ravani" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Viraj_.jpg" alt="Viraj Ravani" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Viraj Ravani</h4>
@@ -1046,7 +1112,7 @@
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Gunjan Israni.jpg" alt="Gunjan Israni" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Gunjan.jpg" alt="Gunjan Israni" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Gunjan Israni</h4>
@@ -1057,7 +1123,7 @@
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Nitin Choudhary_.jpg" alt="Nitin Choudhary" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Nitin.jpg" alt="Nitin Choudhary" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Nitin Choudhary</h4>
@@ -1068,7 +1134,7 @@
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Vidisha Tayade.png" alt="Vidisha Tayade" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Vidisha.jpg" alt="Vidisha Tayade" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Vidisha Tayade</h4>
@@ -1078,8 +1144,8 @@
                         </div>
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">VD</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Vaishnavi.jpg" alt="Vaishnavi Dhotre" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Vaishnavi Dhotre</h4>
@@ -1090,7 +1156,7 @@
 
                         <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Shravani Mohide.png" alt="Shravani Mohide" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Shravani.jpg" alt="Shravani Mohide" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Shravani Mohide</h4>
@@ -1101,8 +1167,8 @@
 
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">DP</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Dhruvi.jpg" alt="Dhruvi Patel" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Dhruvi Patel</h4>
@@ -1112,8 +1178,8 @@
                         </div>
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">KB</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Khushi.jpg" alt="Khushi Brahmbhatt" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Khushi Brahmbhatt</h4>
@@ -1123,8 +1189,8 @@
                         </div>
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">AW</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Afifa.jpg" alt="Afifa Waghu" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Afifa Waghu</h4>
@@ -1134,8 +1200,8 @@
                         </div>
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">DP</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Deven.jpg" alt="Deven Patel" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Deven Patel</h4>
@@ -1145,8 +1211,8 @@
                         </div>
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">KS</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Krit.jpg" alt="Krit Shah" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Krit Shah</h4>
@@ -1157,7 +1223,7 @@
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Mahek Agnihotri.jpg" alt="Mahek Agnihotri" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Mahek.jpg" alt="Mahek Agnihotri" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Mahek Agnihotri</h4>
@@ -1167,8 +1233,8 @@
                         </div>
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">DM</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Diksha.jpg" alt="Diksha More" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Diksha More</h4>
@@ -1179,7 +1245,7 @@
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Saachi Chunekar_PR department.jpg" alt="Saachi Chunekar" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Saachi.jpg" alt="Saachi Chunekar" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Saachi Chunekar</h4>
@@ -1190,7 +1256,7 @@
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Tanisha Bhagat.jpg" alt="Tanisha Bhagat" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Tanisha.jpg" alt="Tanisha Bhagat" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Tanisha Bhagat</h4>
@@ -1200,8 +1266,8 @@
                         </div>
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">LC</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Laxman.jpg" alt="Laxman Choudhary" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Laxman Choudhary</h4>
@@ -1212,8 +1278,8 @@
 
                         <!-- Duplicate cards for seamless loop -->
                         <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-[#9d2235] to-[#7a1b29] flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">AK</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Aaysha Khan</h4>
@@ -1223,8 +1289,8 @@
                         </div>
 
                         <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-[#9d2235] to-[#7a1b29] flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">PG</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Priyansh Gupta</h4>
@@ -1234,8 +1300,8 @@
                         </div>
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">SC</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Shlok Chauhan</h4>
@@ -1245,8 +1311,8 @@
                         </div>
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">NG</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/1.jpg" alt="Nirek Ganguly" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Nirek Ganguly</h4>
@@ -1256,8 +1322,8 @@
                         </div>
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">IJ</div>
+                            <div class="h-48 overflow-hidden bg-gray-200">
+                                <img src="Team Pics Converted/Ishika.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Ishika Jain</h4>
@@ -1396,16 +1462,6 @@
                             </div>
                         </a>
                         
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/voicessomaiya/" target="_blank" 
-                           class="flex items-center p-3 bg-blue-600 rounded-lg text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
-                            <i data-lucide="linkedin" class="w-5 h-5 mr-3 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-sm">LinkedIn</p>
-                                <p class="text-xs opacity-90">Voices Somaiya</p>
-                            </div>
-                        </a>
-                        
                         <!-- YouTube -->
                         <a href="https://www.youtube.com/@somaiyavoices" target="_blank" 
                            class="flex items-center p-3 bg-red-600 rounded-lg text-white hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
@@ -1511,16 +1567,16 @@
         // Initialize Icons
         lucide.createIcons();
 
-        // Scroll reveal animations
+        // Enhanced scroll reveal animations with directional support
         function revealOnScroll() {
-            const reveals = document.querySelectorAll('.scroll-reveal, .fade-in');
+            const reveals = document.querySelectorAll('.scroll-reveal, .fade-in, .slide-in-left, .slide-in-right, .scale-in');
             
             reveals.forEach(reveal => {
                 const elementTop = reveal.getBoundingClientRect().top;
                 const elementVisible = 150;
                 
                 if (elementTop < window.innerHeight - elementVisible) {
-                    reveal.classList.add('revealed');
+                    reveal.classList.add('visible');
                 }
             });
         }
@@ -1545,7 +1601,7 @@
             // Animate hero section
             setTimeout(() => {
                 const heroElements = document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2, .fade-in-delay-3');
-                heroElements.forEach(el => el.classList.add('revealed'));
+                heroElements.forEach(el => el.classList.add('visible'));
             }, 200);
             
             // Animate team cards
@@ -1608,37 +1664,7 @@
         closeBtn.addEventListener('click', toggleMenu);
 
         // Team scroll navigation - Improved version
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add LinkedIn icons to all team cards
-            function addLinkedInIcons() {
-                const teamCards = document.querySelectorAll('.leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card');
-                
-                teamCards.forEach(card => {
-                    const cardContent = card.querySelector('.p-4');
-                    
-                    // Check if LinkedIn icon already exists
-                    if (cardContent && !cardContent.querySelector('[data-lucide="linkedin"]')) {
-                        const linkedinDiv = document.createElement('div');
-                        linkedinDiv.className = 'mt-2 text-center';
-                        linkedinDiv.innerHTML = `
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition">
-                                <i data-lucide="linkedin" class="w-4 h-4"></i>
-                            </a>
-                        `;
-                        cardContent.appendChild(linkedinDiv);
-                    }
-                });
-                
-                // Re-initialize Lucide icons for new icons
-                if (window.lucide) {
-                    lucide.createIcons();
-                }
-            }
-            
-            // Add icons after a short delay to ensure DOM is ready
-            setTimeout(addLinkedInIcons, 100);
-
-            let currentPosition = 0;
+        document.addEventListener('DOMContentLoaded', function() {            let currentPosition = 0;
             let isManualControl = false;
             const teamScroll = document.getElementById('teamScroll');
             const scrollLeftBtn = document.getElementById('scrollLeft');
