@@ -52,7 +52,6 @@
             font-family: 'Nunito Sans', sans-serif;
             color: #333;
             background-color: var(--off-white);
-            padding-top: 96px; /* Account for fixed header height (h-24 = 6rem = 96px) */
         }
 
         h1, h2, h3, h4 {
@@ -654,10 +653,10 @@
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen pt-24">
 
     <!-- Header / Navigation -->
-    <header class="bg-black shadow-lg fixed top-0 w-full z-50 transition-all duration-300">
+    <header class="bg-black shadow-sm fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 
@@ -842,18 +841,18 @@
                             <img src="Dr. Urmi Thakkar.jpg" alt="Dr. Urmi Thakkar" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900">Message from the Dean</h3>
-                            <p class="text-sm text-[#9d2235] font-semibold">Student Welfare</p>
+                            <h3 class="text-xl font-bold text-gray-900">Dr Urmi Thakkar</h3>
+                            <p class="text-sm text-[#9d2235] font-semibold">Dean Student Welfare</p>
                         </div>
                     </div>
                     <div class="relative">
                         <i data-lucide="quote" class="text-gray-200 w-12 h-12 absolute -top-2 -left-2 -z-10"></i>
                         <div id="dean-preview" class="">
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"At Somaiya Vidyavihar University every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
+                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"At Somaiya Vidyavihar every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
                             <p class="text-gray-600 italic text-sm leading-relaxed mb-4">The university is known for its excellent infrastructure for teaching, learning, research and eco-friendly lush green campus..."</p>
                         </div>
                         <div id="dean-full" class="hidden">
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"At Somaiya Vidyavihar University every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
+                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"At Somaiya Vidyavihar every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
                             <p class="text-gray-600 italic text-sm leading-relaxed mb-4">The university is known for its excellent infrastructure for teaching, learning, research and eco-friendly lush green campus. Also we have Sports academy with multiple facilities on campus.</p>
                             <p class="text-gray-600 italic text-sm leading-relaxed mb-4">We have passion of creating Education for all the students in a way it's freedom for our country. Our main aim is to give good quality modern education including a strong component of culture, inculcation of values, awareness of the environment, physical activities and physical education. We want our students to get good Quality Education and give flexibility in curriculum to choose things based on their interests.</p>
                             <p class="text-gray-600 italic text-sm leading-relaxed mb-4">Our students on campus have reached heights along with Education in different areas of Sports till International level, launching ISRO Satellite and various start ups reaching multinational companies.</p>
@@ -892,8 +891,132 @@
         </div>
     </section>
 
+    <!-- Featured Videos Section -->
+    <section id="featured-videos" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Featured Content</h2>
+                <p class="text-gray-600 text-sm max-w-lg mx-auto">Compelling stories and performances from our campus community.</p>
+                <div class="w-16 h-1 somaiya-bg mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+                <!-- Video 1: Millennials And Newspapers -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/Millennials And Newspapers _ Somaiya Voices.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-[#9d2235] text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Story
+                            </div>
+                            <span class="text-xs text-gray-500">Somaiya Voices</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            Millennials And Newspapers
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Exploring how young voices are shaping modern journalism.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 2: Presenting Rhapsody -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/Presenting Rhapsody _ The official Drama Team of KJSCE.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-purple-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Performance
+                            </div>
+                            <span class="text-xs text-gray-500">KJSCE Drama</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            Presenting Rhapsody
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Experience the artistic brilliance of KJSCE's Drama Team.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 3: The Yearbook Project -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/The Yearbook Project'19 _ EP01_ 'The Fire Alarm Hoax'.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Series
+                            </div>
+                            <span class="text-xs text-gray-500">Yearbook Project</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            The Fire Alarm Hoax
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Episode 1 of The Yearbook Project '19 series.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 4: Teachers Funny Stories -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/We Asked Teachers The Funniest Things Their Students Had Done Part_ 1 _ Somaiya Voices.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-blue-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Interview
+                            </div>
+                            <span class="text-xs text-gray-500">Somaiya Voices</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            Teachers' Funny Stories
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Hilarious moments shared by our beloved teachers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compact Call to Action -->
+            <div class="text-center mt-6">
+                <div class="bg-[#9d2235] rounded-lg p-4 text-white max-w-lg mx-auto">
+                    <h3 class="text-base font-bold mb-2">Share Your Story</h3>
+                    <p class="mb-3 opacity-90 text-xs">
+                        Have compelling content to feature? Submit your stories and performances.
+                    </p>
+                    <a href="mailto:voices@somaiya.edu" 
+                       class="bg-white text-[#9d2235] px-3 py-1.5 rounded font-semibold hover:bg-gray-100 transition-colors inline-flex items-center text-xs">
+                        <i data-lucide="video" class="w-3 h-3 mr-1"></i>
+                        Submit Content
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Student & Campus Network Section -->
-    <section id="media-sponsor" class="py-20 bg-white">
+    <section id="media-sponsor" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Student & Campus Network</h2>
             <p class="text-gray-500 mb-12">Proudly representing flagship events</p>
@@ -987,7 +1110,7 @@
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/4.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Ishika.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Ishika Jain</h4>
@@ -1176,7 +1299,7 @@
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/ID template  (80 x 130 mm)_20251126_173043_0000.jpg" alt="Khushi Brahmbhatt" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Khushi.jpg" alt="Khushi Brahmbhatt" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Khushi Brahmbhatt</h4>
@@ -1242,7 +1365,7 @@
 
                         <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Krit ID.jpg" alt="Saachi Chunekar" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Saachi.jpg" alt="Saachi Chunekar" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Saachi Chunekar</h4>
@@ -1320,7 +1443,7 @@
 
                         <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
                             <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/4.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
+                                <img src="Team Pics Converted/Ishika.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
                             </div>
                             <div class="p-4">
                                 <h4 class="text-base font-bold text-gray-900">Ishika Jain</h4>
@@ -1333,6 +1456,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Newsletter Archives Section -->
     <section id="newsletter-archives" class="py-8 bg-white">
@@ -1684,8 +1809,8 @@
 
             function resumeAnimation() {
                 if (teamScroll && isManualControl) {
-                    // Keep manual control - no automatic animation
-                    console.log('Manual control maintained');
+                    // Keep manual control - no automatic animation restart
+                    console.log('Manual control maintained - no auto animation');
                 }
             }
 
