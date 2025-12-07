@@ -97,9 +97,11 @@
 
         /* Professional horizontal scrolling animation for team sections */
         .scroll-container {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
         }
         
         /* Prevent horizontal scroll issues in Edge */
@@ -109,9 +111,61 @@
         }
 
         .scroll-content {
-            display: flex;
-            gap: 1rem;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 1rem !important;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+            width: max-content !important;
+            align-items: flex-start !important;
+            flex-wrap: nowrap !important;
+            overflow: visible !important;
+        }
+
+        /* Force horizontal layout - override any conflicting styles */
+        #teamScroll {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            width: max-content !important;
+            height: auto !important;
+            align-items: stretch !important;
+        }
+
+        /* Additional CSS to force horizontal layout */
+        #teamScroll > * {
+            flex-shrink: 0 !important;
+            display: block !important;
+            float: none !important;
+        }
+
+        /* Override any Tailwind CSS that might be causing issues */
+        .team-scroll-container * {
+            box-sizing: border-box !important;
+        }
+
+        /* Absolutely force no vertical layout */
+        .leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card {
+            display: block !important;
+            float: none !important;
+            clear: none !important;
+            position: static !important;
+            vertical-align: top !important;
+        }
+
+        /* Completely disable any grid layouts in team section */
+        .team-scroll-container .grid,
+        .team-scroll-container [class*="grid"],
+        .team-scroll-container .flex-wrap,
+        .team-scroll-container [class*="flex-wrap"] {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+        }
+
+        /* Force inline display for team cards */
+        .team-scroll-container > * > * > * {
+            display: inline-block !important;
+            vertical-align: top !important;
         }
 
         .scroll-content.paused {
@@ -270,9 +324,12 @@
         }
 
         .team-scroll-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
+            position: relative !important;
+            overflow: hidden !important;
+            width: 100% !important;
+            height: auto !important;
+            min-height: 320px !important;
+            white-space: nowrap !important;
         }
         
         /* Edge browser specific fixes for team cards */
@@ -284,34 +341,21 @@
         }
 
         /* Ensure team cards maintain their width in the scrolling container */
-        .team-card {
-            flex: 0 0 auto;
-            min-width: 200px;
+        .team-card, .leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card {
+            flex: 0 0 auto !important;
+            min-width: 200px !important;
+            max-width: 200px !important;
+            width: 200px !important;
+            display: inline-block !important;
+            vertical-align: top !important;
+            box-sizing: border-box !important;
         }
 
-        .leadership-card {
-            flex: 0 0 auto;
-            min-width: 200px;
-        }
-
-        .dept-head-card {
-            flex: 0 0 auto;
-            min-width: 200px;
-        }
-
-        .sub-head-card {
-            flex: 0 0 auto;
-            min-width: 200px;
-        }
-
-        .member-card {
-            flex: 0 0 auto;
-            min-width: 200px;
-        }
-
-        .crew-card {
-            flex: 0 0 auto;
-            min-width: 200px;
+        /* Prevent any potential grid or flex conflicts */
+        .leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card {
+            float: none !important;
+            position: relative !important;
+            margin-right: 1rem !important;
         }
 
         /* Modal Styles */
@@ -690,8 +734,8 @@
                         <a href="https://www.instagram.com/somaiyavoices" target="_blank" class="text-gray-400 hover:text-white">
                             <i data-lucide="instagram" class="w-5 h-5"></i>
                         </a>
-                        <a href="https://www.youtube.com/@somaiyavoices" target="_blank" class="text-gray-400 hover:text-white">
-                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        <a href="https://www.linkedin.com/company/somaiya-voices" target="_blank" class="text-gray-400 hover:text-white">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
                         </a>
                         <a href="mailto:voices@somaiya.edu" class="text-gray-400 hover:text-white">
                             <i data-lucide="mail" class="w-5 h-5"></i>
@@ -720,7 +764,7 @@
                 <a href="#meet-team" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Meet Our Team</a>
                 <div class="flex space-x-4 mt-4">
                     <a href="https://www.instagram.com/somaiyavoices" target="_blank" class="text-gray-500"><i data-lucide="instagram"></i></a>
-                    <a href="https://www.youtube.com/@somaiyavoices" target="_blank" class="text-gray-500"><i data-lucide="youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/somaiya-voices" target="_blank" class="text-gray-500"><i data-lucide="linkedin"></i></a>
                     <a href="mailto:voices@somaiya.edu" class="text-gray-500"><i data-lucide="mail"></i></a>
                 </div>
             </div>
@@ -734,7 +778,7 @@
             <video class="w-full h-full object-cover" autoplay muted loop playsinline>
                 <source src="videoplayback.mp4" type="video/mp4">
                 <!-- Fallback image if video doesn't load -->
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="University Campus" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="University Campus" class="w-full h-full object-contain">
             </video>
         </div>
         <div class="relative container mx-auto px-4 text-center">
@@ -799,7 +843,7 @@
                                             <span>6</span>
                                         </button>
                                     </div>
-                                    <a href="https://www.instagram.com/somaiyavoices/" target="_blank" class="text-[#9d2235] hover:text-[#7a1b29] font-medium text-sm transition">
+                                    <a href="htt ps://www.instagram.com/somaiyavoices/" target="_blank" class="text-[#9d2235] hover:text-[#7a1b29] font-medium text-sm transition">
                                         View on Instagram
                                     </a>
                                 </div>
@@ -838,7 +882,7 @@
                 <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition border-t-4 border-[#9d2235]">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
-                            <img src="Dr. Urmi Thakkar.jpg" alt="Dr. Urmi Thakkar" class="w-full h-full object-cover">
+                            <img src="Dr. Urmi Thakkar.jpg" alt="Dr. Urmi Thakkar" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-gray-900">Dr Urmi Thakkar</h3>
@@ -867,7 +911,7 @@
                 <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition border-t-4 border-[#9d2235]">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
-                            <img src="Priyanka Pic.jpg" alt="Ms. Priyanka Shetty" class="w-full h-full object-cover">
+                            <img src="Priyanka Pic.jpg" alt="Ms. Priyanka Shetty" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-gray-900">Ms. Priyanka Shetty</h3>
@@ -1050,405 +1094,375 @@
     <section id="meet-team" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">Dedicated individuals working together to amplify student voices across Somaiya Vidyavihar</p>
                 <div class="w-24 h-1 somaiya-bg mx-auto"></div>
             </div>
 
-            <!-- All Team Members in Single Line -->
-            <div class="team-scroll-container">
+            <!-- Horizontal Team Scroll -->
+            <div class="relative">
                 <!-- Navigation Buttons -->
-                <button class="nav-button left" id="scrollLeft">‹</button>
-                <button class="nav-button right" id="scrollRight">›</button>
+                <button class="nav-button left hidden md:block" id="scrollLeft" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 20; font-size: 24px; font-weight: bold; box-shadow: 0 4px 20px rgba(157, 34, 53, 0.3);">‹</button>
+                <button class="nav-button right hidden md:block" id="scrollRight" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 20; font-size: 24px; font-weight: bold; box-shadow: 0 4px 20px rgba(157, 34, 53, 0.3);">›</button>
                 
-                <div class="scroll-container">
-                    <div class="scroll-content" id="teamScroll">
-                        <!-- Chief -->
-                        <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan" class="w-full h-full object-cover">
+                <!-- Mobile Navigation Buttons -->
+                <div class="flex md:hidden justify-center gap-4 mb-4">
+                    <button class="nav-button-mobile" id="scrollLeftMobile" style="background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; font-weight: bold; box-shadow: 0 2px 10px rgba(157, 34, 53, 0.3);">‹</button>
+                    <button class="nav-button-mobile" id="scrollRightMobile" style="background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; font-weight: bold; box-shadow: 0 2px 10px rgba(157, 34, 53, 0.3);">›</button>
+                </div>
+                
+                <div class="overflow-hidden" style="margin: 0 md:70px;">
+                    <div class="flex gap-4 md:gap-6 transition-transform duration-500 ease-in-out" id="teamScroll" style="width: max-content; padding: 0 10px md:padding: 0;"">>
+                        <!-- All Team Cards - Same Size -->
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;" data-member="AK">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Aaysha Khan</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CHIEF</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Aaysha Khan</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CHIEF</p>
                                 <p class="text-xs text-gray-600">KJSSC</p>
                             </div>
                         </div>
-                        
-                        <!-- Co-Chief -->
-                        <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-cover">
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;" data-member="PG">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Priyansh Gupta</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CO-CHIEF</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-                        
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Shlok Chauhan</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CONTENT & PR HEAD</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Priyansh Gupta</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CO-CHIEF & SOCIAL MEDIA HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                                <div class="text-white text-4xl font-bold">NG</div>
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;" data-member="SC">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Nirek Ganguly</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">OPERATIONS HEAD</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Shlok Chauhan</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT & PR HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Ishika.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
+                                <div class="text-white text-2xl md:text-3xl font-bold">NG</div>
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Ishika Jain</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">GRAPHICS HEAD</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Nirek Ganguly</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Ishika_.jpg" alt="Ishika Jain" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Priyansh Gupta</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">SOCIAL MEDIA HEAD</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Ishika Jain</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">GRAPHICS HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Kaustubh_new.jpg" alt="Kaustubh Rewankar" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Kaustub.jpg" alt="Kaustubh Rewankar" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Kaustubh Rewankar</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PHOTO & VIDEO HEAD</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Kaustubh Rewankar</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO HEAD</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="sub-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Sweekriti.jpg" alt="Sweekriti Maheshwari" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Sweekriti.jpg" alt="Sweekriti Maheshwari" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Sweekriti Maheshwari</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CONTENT SUB-HEAD</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Sweekriti Maheshwari</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT SUB-HEAD</p>
                                 <p class="text-xs text-gray-600">KJSSE</p>
                             </div>
                         </div>
 
-                        <div class="sub-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/3.jpg" alt="Rutwa Nimkar" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Rutwa.jpg" alt="Rutwa Nimkar" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Rutwa Nimkar</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PR SUB-HEAD</p>
-                                <p class="text-xs text-gray-600">KJSAC</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Rutwa Nimkar</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PR SUB-HEAD</p>
+                                <p class="text-xs text-gray-600">SSSMS</p>
                             </div>
                         </div>
 
-                        <div class="sub-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Megh.jpg" alt="Megh Bame" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Megh.jpg" alt="Megh Bame" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Megh Bame</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">SOCIAL MEDIA SUB-HEAD</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Megh Bame</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
+                                <p class="text-xs text-gray-600">SIMSR</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Aiza.jpg" alt="Aiza Mistry" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Aiza Mistry</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Aiza.jpg" alt="Aiza Mistry" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Christina.jpg" alt="Christina Dcunha" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Aiza Mistry</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CONTENT TEAM</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Christina.jpg" alt="Christina Dcunha" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Christina Dcunha</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CONTENT TEAM</p>
-                                <p class="text-xs text-gray-600">KJSAC</p>
-                            </div>
-                        </div>
-
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Prachi.jpg" alt="Prachi Mishra" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Prachi Mishra</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PR TEAM</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Viplav.jpg" alt="Viplav Bhanarkar" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Viplav Bhanarkar</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">GRAPHICS TEAM</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Viraj_.jpg" alt="Viraj Ravani" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Viraj Ravani</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">GRAPHICS TEAM</p>
-                                <p class="text-xs text-gray-600">KJSP</p>
-                            </div>
-                        </div>
-
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Gunjan.jpg" alt="Gunjan Israni" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Gunjan Israni</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">GRAPHICS TEAM</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Nitin.jpg" alt="Nitin Choudhary" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Nitin Choudhary</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PHOTO & VIDEO TEAM</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Christina Dcunha</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
                                 <p class="text-xs text-gray-600">KJSSC</p>
                             </div>
                         </div>
 
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Vidisha.jpg" alt="Vidisha Tayade" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Prachi.jpg" alt="Prachi Mishra" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Vidisha Tayade</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">SOCIAL MEDIA TEAM</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Prachi Mishra</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
+                                <p class="text-xs text-gray-600">SIMSR</p>
                             </div>
                         </div>
 
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Vaishnavi.jpg" alt="Vaishnavi Dhotre" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Viplav.jpg" alt="Viplav Bhanarkar" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Vaishnavi Dhotre</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">SOCIAL MEDIA TEAM</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Viplav Bhanarkar</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="member-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Shravani.jpg" alt="Shravani Mohide" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Viraj_.jpg" alt="Viraj Ravani" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Shravani Mohide</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">OPERATIONS TEAM</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Viraj Ravani</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
+                                <p class="text-xs text-gray-600">SJSM</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Gunjan.jpg" alt="Gunjan Israni" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Gunjan Israni</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS MEMBER</p>
+                                <p class="text-xs text-gray-600">SSHSS</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Nitin.jpg" alt="Nitin Choudhary" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Nitin Choudhary</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS MEMBER</p>
+                                <p class="text-xs text-gray-600">SSHSS</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Vidisha.jpg" alt="Vidisha Tayade" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Vidisha Tayade</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
+                                <p class="text-xs text-gray-600">SSHSS</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Vaishnavi.jpg" alt="Vaishnavi Dhotre" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Vaishnavi Dhotre</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
+                                <p class="text-xs text-gray-600">SSHSS</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Shravani.jpg" alt="Shravani Mohide" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Shravani Mohide</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS CREW</p>
                                 <p class="text-xs text-gray-600">KJSCE</p>
                             </div>
                         </div>
 
-
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Dhruvi.jpg" alt="Dhruvi Patel" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Dhruvi.jpg" alt="Dhruvi Patel" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Dhruvi Patel</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CONTENT CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Dhruvi Patel</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT CREW</p>
                                 <p class="text-xs text-gray-600">SSD</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Khushi.jpg" alt="Khushi Brahmbhatt" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/ID template  (80 x 130 mm)_20251126_173043_0000.jpg" alt="Khushi Brahmbhatt" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Khushi Brahmbhatt</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">GRAPHICS CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Khushi Brahmbhatt</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">GRAPHICS CREW</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Afifa.jpg" alt="Afifa Waghu" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Afifa.jpg" alt="Afifa Waghu" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Afifa Waghu</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PHOTO & VIDEO CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Afifa Waghu</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Deven.jpg" alt="Deven Patel" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Deven.jpg" alt="Deven Patel" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Deven Patel</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PHOTO & VIDEO CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Deven Patel</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
                                 <p class="text-xs text-gray-600">SK SOMAIYA</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Krit.jpg" alt="Krit Shah" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Krit ID.jpg" alt="Krit Shah" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Krit Shah</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PHOTO & VIDEO CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Krit Shah</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
                                 <p class="text-xs text-gray-600">KJSAC</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Mahek.jpg" alt="Mahek Agnihotri" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Lakshita.jpg" alt="Lakshita Tiwari" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Mahek Agnihotri</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">SOCIAL MEDIA CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Lakshita Tiwari</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
                                 <p class="text-xs text-gray-600">SSHSS</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Diksha.jpg" alt="Diksha More" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Mahek.jpg" alt="Mahek Agnihotri" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Diksha More</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">SOCIAL MEDIA CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Mahek Agnihotri</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
+                                <p class="text-xs text-gray-600">SSHSS</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Diksha.jpg" alt="Diksha More" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Diksha More</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
                                 <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Saachi.jpg" alt="Saachi Chunekar" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Meher.jpg" alt="Meher Shah" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Saachi Chunekar</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">PR CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Meher Shah</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
+                                <p class="text-xs text-gray-600">SSHSS</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Siddhi.jpg" alt="Siddhi Kamble" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Siddhi Kamble</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
+                                <p class="text-xs text-gray-600">SSBAS</p>
+                            </div>
+                        </div>
+
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Sachi.jpg" alt="Saachi Chunekar" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Saachi Chunekar</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PR CREW</p>
                                 <p class="text-xs text-gray-600">SKSCAC</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Tanisha.jpg" alt="Tanisha Bhagat" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Tanisha.jpg" alt="Tanisha Bhagat" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Tanisha Bhagat</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">OPERATIONS CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Tanisha Bhagat</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS CREW</p>
                                 <p class="text-xs text-gray-600">KJSAC</p>
                             </div>
                         </div>
 
-                        <div class="crew-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Laxman.jpg" alt="Laxman Choudhary" class="w-full h-full object-cover">
+                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
+                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
+                                <img src="Team Pics Converted/Laxman.jpg" alt="Laxman Choudhary" class="w-full h-full object-contain">
                             </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Laxman Choudhary</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">OPERATIONS CREW</p>
+                            <div class="p-3 md:p-4 text-center">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Laxman Choudhary</h4>
+                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS CREW</p>
                                 <p class="text-xs text-gray-600">KJSSC</p>
-                            </div>
-                        </div>
-
-                        <!-- Duplicate cards for seamless loop -->
-                        <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Aaysha Khan</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CHIEF</p>
-                                <p class="text-xs text-gray-600">KJSSC</p>
-                            </div>
-                        </div>
-
-                        <div class="leadership-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Priyansh Gupta</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CO-CHIEF</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Shlok Chauhan</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">CONTENT & PR HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/1.jpg" alt="Nirek Ganguly" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Nirek Ganguly</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">OPERATIONS HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="dept-head-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition text-center">
-                            <div class="h-48 overflow-hidden bg-gray-200">
-                                <img src="Team Pics Converted/Ishika.jpg" alt="Ishika Jain" class="w-full h-full object-cover">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="text-base font-bold text-gray-900">Ishika Jain</h4>
-                                <p class="text-xs text-[#9d2235] font-semibold">GRAPHICS HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
                             </div>
                         </div>
                     </div>
@@ -1456,8 +1470,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- Newsletter Archives Section -->
     <section id="newsletter-archives" class="py-8 bg-white">
@@ -1584,13 +1596,13 @@
                             </div>
                         </a>
                         
-                        <!-- YouTube -->
-                        <a href="https://www.youtube.com/@somaiyavoices" target="_blank" 
-                           class="flex items-center p-3 bg-red-600 rounded-lg text-white hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
-                            <i data-lucide="youtube" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/somaiya-voices" target="_blank" 
+                           class="flex items-center p-3 bg-blue-600 rounded-lg text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                            <i data-lucide="linkedin" class="w-5 h-5 mr-3 flex-shrink-0"></i>
                             <div>
-                                <p class="font-semibold text-sm">YouTube</p>
-                                <p class="text-xs opacity-90">@somaiyavoices</p>
+                                <p class="font-semibold text-sm">LinkedIn</p>
+                                <p class="text-xs opacity-90">Somaiya Voices</p>
                             </div>
                         </a>
                     </div>
@@ -1785,97 +1797,85 @@
         btn.addEventListener('click', toggleMenu);
         closeBtn.addEventListener('click', toggleMenu);
 
-        // Team scroll navigation - Improved version
-        document.addEventListener('DOMContentLoaded', function() {            let currentPosition = 0;
-            let isManualControl = false;
+        // Professional horizontal team scroll
+        document.addEventListener('DOMContentLoaded', function() {
             const teamScroll = document.getElementById('teamScroll');
             const scrollLeftBtn = document.getElementById('scrollLeft');
             const scrollRightBtn = document.getElementById('scrollRight');
-            const cardWidth = 220;
-            const scrollStep = cardWidth * 2; // Scroll 2 cards at a time
-            const totalCards = document.querySelectorAll('.leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card').length;
-            // Remove restrictive limit - allow scrolling through more content
-            const maxScroll = -(totalCards * cardWidth * 0.8); // Allow scrolling through 80% of content
-            
-            console.log('Navigation initialized', { totalCards, maxScroll, cardWidth });
-            
+            const scrollLeftMobileBtn = document.getElementById('scrollLeftMobile');
+            const scrollRightMobileBtn = document.getElementById('scrollRightMobile');
+            let currentPosition = 0;
+            const scrollStep = window.innerWidth < 768 ? 200 : 300; // Smaller scroll on mobile
+
             function updateScrollPosition() {
                 if (teamScroll) {
                     teamScroll.style.transform = `translateX(${currentPosition}px)`;
-                    isManualControl = true;
-                    console.log('Updated position:', currentPosition);
                 }
             }
 
-            function resumeAnimation() {
-                if (teamScroll && isManualControl) {
-                    // Keep manual control - no automatic animation restart
-                    console.log('Manual control maintained - no auto animation');
-                }
+            function scrollLeft() {
+                const maxScroll = 0;
+                currentPosition = Math.min(currentPosition + scrollStep, maxScroll);
+                updateScrollPosition();
             }
 
-            // Left button click handler
+            function scrollRight() {
+                const containerWidth = teamScroll.parentElement.offsetWidth;
+                const contentWidth = teamScroll.scrollWidth;
+                const minScroll = -(contentWidth - containerWidth + 100);
+
+                currentPosition = Math.max(currentPosition - scrollStep, minScroll);
+                updateScrollPosition();
+            }
+
+            // Desktop navigation
             if (scrollLeftBtn) {
-                scrollLeftBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('Left button clicked');
-                    
-                    currentPosition = Math.min(currentPosition + scrollStep, 0);
-                    updateScrollPosition();
-                    resetInactivityTimer();
-                });
+                scrollLeftBtn.addEventListener('click', scrollLeft);
             }
 
-            // Right button click handler  
             if (scrollRightBtn) {
-                scrollRightBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('Right button clicked, current:', currentPosition);
-                    
-                    // Move to the next position
-                    const newPosition = currentPosition - scrollStep;
-                    
-                    // If we're still within reasonable bounds, continue scrolling
-                    if (newPosition >= maxScroll) {
-                        currentPosition = newPosition;
-                        console.log('Continuing scroll to:', currentPosition);
-                    } else {
-                        // Loop back to the beginning
-                        currentPosition = 0;
-                        console.log('Looped back to start');
-                    }
-                    
-                    updateScrollPosition();
-                    resetInactivityTimer();
-                });
+                scrollRightBtn.addEventListener('click', scrollRight);
             }
 
-            // Resume auto-scroll after 5 seconds of inactivity
-            let inactivityTimer;
-            function resetInactivityTimer() {
-                clearTimeout(inactivityTimer);
-                inactivityTimer = setTimeout(resumeAnimation, 5000);
+            // Mobile navigation
+            if (scrollLeftMobileBtn) {
+                scrollLeftMobileBtn.addEventListener('click', scrollLeft);
             }
 
-            // Pause on hover
-            if (teamScroll) {
-                teamScroll.addEventListener('mouseenter', function() {
-                    if (!isManualControl) {
-                        teamScroll.style.animationPlayState = 'paused';
-                    }
-                });
-                
-                teamScroll.addEventListener('mouseleave', function() {
-                    if (!isManualControl) {
-                        teamScroll.style.animationPlayState = 'running';
-                    }
-                });
+            if (scrollRightMobileBtn) {
+                scrollRightMobileBtn.addEventListener('click', scrollRight);
             }
-        });
 
-        // Close menu when a link is clicked
+            // Add hover effects for nav buttons (desktop only)
+            [scrollLeftBtn, scrollRightBtn].forEach(btn => {
+                if (btn && window.innerWidth >= 768) {
+                    btn.addEventListener('mouseenter', function() {
+                        this.style.background = 'rgba(157, 34, 53, 1)';
+                        this.style.transform = 'translateY(-50%) scale(1.1)';
+                    });
+
+                    btn.addEventListener('mouseleave', function() {
+                        this.style.background = 'rgba(157, 34, 53, 0.9)';
+                        this.style.transform = 'translateY(-50%) scale(1)';
+                    });
+                }
+            });
+
+            // Add hover effects for mobile buttons
+            [scrollLeftMobileBtn, scrollRightMobileBtn].forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('touchstart', function() {
+                        this.style.background = 'rgba(157, 34, 53, 1)';
+                        this.style.transform = 'scale(1.1)';
+                    });
+
+                    btn.addEventListener('touchend', function() {
+                        this.style.background = 'rgba(157, 34, 53, 0.9)';
+                        this.style.transform = 'scale(1)';
+                    });
+                }
+            });
+        });        // Close menu when a link is clicked
         links.forEach(link => {
             link.addEventListener('click', () => {
                 if(menu.classList.contains('open')) toggleMenu();
@@ -2114,29 +2114,96 @@
                 college: 'KJSSC',
                 description: 'Laxman assists with operational coordination and helps ensure that all team activities run smoothly. His reliability and dedication make him an important part of the operations support team.',
                 bgColor: 'linear-gradient(135deg, #8b5cf6, #7c3aed)'
+            },
+            'LT': {
+                name: 'Lakshita Tiwari',
+                role: 'CONTENT TEAM',
+                college: 'SSHSS',
+                description: 'Lakshita contributes to the content team with her excellent writing skills and creative approach to storytelling. She helps develop engaging articles that resonate with students and captures the essence of campus life.',
+                bgColor: 'linear-gradient(135deg, #8b5cf6, #7c3aed)'
+            },
+            'MS': {
+                name: 'Meher Shah',
+                role: 'SOCIAL MEDIA TEAM',
+                college: 'SSHSS',
+                description: 'Meher brings creativity and enthusiasm to the social media team, helping create engaging posts and manage online community interactions. Her understanding of digital trends keeps Voices connected with students.',
+                bgColor: 'linear-gradient(135deg, #10b981, #047857)'
+            },
+            'SK': {
+                name: 'Siddhi Kamble',
+                role: 'GRAPHICS TEAM',
+                college: 'SSHSS',
+                description: 'Siddhi supports the graphics team with her artistic talents and design skills. She helps create visually appealing content that enhances the storytelling impact of Voices publications.',
+                bgColor: 'linear-gradient(135deg, #10b981, #047857)'
             }
         };
 
 
 
-        // SIMPLE WORKING MODAL SYSTEM
+        // ENHANCED MODAL SYSTEM WITH DETAILED DESCRIPTIONS
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Setting up simple modal system...');
+            console.log('Setting up enhanced modal system...');
+            
+            // Create a mapping of team member names to their data keys
+            const nameToKey = {
+                'Aaysha Khan': 'AK',
+                'Priyansh Gupta': 'PG', 
+                'Shlok Chauhan': 'SC',
+                'Nirek Ganguly': 'NG',
+                'Ishika Jain': 'IJ',
+                'Kaustubh Rewankar': 'KR',
+                'Sweekriti Maheshwari': 'SM',
+                'Rutwa Nimkar': 'RN',
+                'Megh Bame': 'MB',
+                'Aiza Mistry': 'AM',
+                'Christina Dcunha': 'CD',
+                'Prachi Mishra': 'PM',
+                'Viplav Bhanarkar': 'VB',
+                'Viraj Ravani': 'VR',
+                'Gunjan Israni': 'GI',
+                'Nitin Choudhary': 'NC',
+                'Vidisha Tayade': 'VT',
+                'Vaishnavi Dhotre': 'VD',
+                'Shravani Mohide': 'SM2',
+                'Dhruvi Patel': 'DP',
+                'Khushi Brahmbhatt': 'KB',
+                'Afifa Waghu': 'AW',
+                'Deven Patel': 'DP2',
+                'Krit Shah': 'KS',
+                'Lakshita Tiwari': 'LT',
+                'Mahek Agnihotri': 'MA',
+                'Diksha More': 'DM',
+                'Meher Shah': 'MS',
+                'Siddhi Kamble': 'SK',
+                'Saachi Chunekar': 'SC2',
+                'Tanisha Bhagat': 'TB',
+                'Laxman Choudhary': 'LC'
+            };
             
             setTimeout(() => {
-                const cards = document.querySelectorAll('.leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card');
+                const cards = document.querySelectorAll('.team-card, .leadership-card, .dept-head-card, .sub-head-card, .member-card, .crew-card');
                 console.log('Found', cards.length, 'team cards');
                 
                 cards.forEach((card, index) => {
                     card.style.cursor = 'pointer';
                     card.addEventListener('click', function() {
                         const nameEl = this.querySelector('h4');
-                        const roleEl = this.querySelector('.text-xs.text-\\[\\#9d2235\\]');
-                        const collegeEl = this.querySelector('.text-xs.text-gray-600');
+                        const roleEl = this.querySelector('.text-xs.text-\\[\\#9d2235\\], .text-\\[\\#9d2235\\]');
+                        const collegeEl = this.querySelector('.text-xs.text-gray-600, .text-gray-600');
                         
                         const name = nameEl ? nameEl.textContent.trim() : 'Team Member';
                         const role = roleEl ? roleEl.textContent.trim() : 'Member';
                         const college = collegeEl ? collegeEl.textContent.trim() : 'Somaiya';
+                        
+                        // Get detailed member data or use default
+                        const memberKey = nameToKey[name];
+                        const memberData = teamMembers[memberKey] || {
+                            name: name,
+                            role: role,
+                            college: college,
+                            description: `${name} is a valued member of the Voices team, contributing their skills and dedication to help create engaging content and foster community connections within Somaiya Vidyavihar. Their work helps amplify student voices and celebrate the diverse experiences across our campus.`,
+                            bgColor: 'linear-gradient(135deg, #9d2235, #7a1b29)'
+                        };
                         
                         // Check if there's an image in the card
                         const cardImg = this.querySelector('img');
@@ -2144,27 +2211,28 @@
                         
                         if (cardImg && cardImg.src && !cardImg.src.includes('placeholder')) {
                             // Use the actual image from the card
-                            avatarContent = `<img src="${cardImg.src}" alt="${name}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px;">`;
+                            avatarContent = `<img src="${cardImg.src}" alt="${memberData.name}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px;">`;
                         } else {
-                            // Fall back to initials
-                            avatarContent = `<div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #9d2235, #7a1b29); color: white; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px; font-weight: bold;">
-                                ${name.split(' ').map(n => n[0]).join('')}
+                            // Fall back to initials with member's specific background
+                            avatarContent = `<div style="width: 80px; height: 80px; border-radius: 50%; background: ${memberData.bgColor}; color: white; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px; font-weight: bold;">
+                                ${memberData.name.split(' ').map(n => n[0]).join('')}
                             </div>`;
                         }
                         
-                        // Create simple popup
+                        // Create enhanced popup with detailed description
                         const popup = document.createElement('div');
                         popup.innerHTML = `
-                            <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 10000;" onclick="this.remove(); document.body.style.overflow=''; event.stopPropagation();">
-                                <div style="background: white; padding: 30px; border-radius: 15px; max-width: 400px; width: 90%; position: relative;" onclick="event.stopPropagation();">
-                                    <button onclick="this.parentElement.parentElement.remove(); document.body.style.overflow=''; event.stopPropagation();" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+                            <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 10000; padding: 20px; box-sizing: border-box;" onclick="this.remove(); document.body.style.overflow=''; event.stopPropagation();">
+                                <div style="background: white; padding: 30px; border-radius: 20px; max-width: 500px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" onclick="event.stopPropagation();">
+                                    <button onclick="this.parentElement.parentElement.remove(); document.body.style.overflow=''; event.stopPropagation();" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #666; hover: #333;">&times;</button>
                                     <div style="text-align: center;">
                                         ${avatarContent}
-                                        <h2 style="margin: 0 0 5px 0; color: #333;">${name}</h2>
-                                        <p style="color: #9d2235; font-weight: bold; margin: 5px 0;">${role}</p>
-                                        <p style="color: #666; margin: 5px 0 15px 0;">${college}</p>
-                                        <p style="color: #555; line-height: 1.6; text-align: left;">
-                                            ${name} is a dedicated member of the Voices team, contributing their unique skills and perspective to help amplify student voices across the Somaiya community. Through their work, they help create meaningful content and foster connections that celebrate the diverse experiences on campus.
+                                        <h2 style="margin: 0 0 8px 0; color: #333; font-size: 24px;">${memberData.name}</h2>
+                                        <p style="color: #9d2235; font-weight: bold; margin: 5px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">${memberData.role}</p>
+                                        <p style="color: #666; margin: 5px 0 20px 0; font-size: 14px;">${memberData.college}</p>
+                                        <div style="width: 50px; height: 3px; background: ${memberData.bgColor}; margin: 0 auto 20px; border-radius: 2px;"></div>
+                                        <p style="color: #555; line-height: 1.7; text-align: left; font-size: 15px; margin: 0;">
+                                            ${memberData.description}
                                         </p>
                                     </div>
                                 </div>
@@ -2174,11 +2242,11 @@
                         document.body.appendChild(popup.firstElementChild);
                         document.body.style.overflow = 'hidden';
                         
-                        console.log('Popup shown for:', name);
+                        console.log('Enhanced popup shown for:', memberData.name);
                     });
                 });
                 
-                console.log('Click handlers added to all cards');
+                console.log('Enhanced click handlers added to all cards');
             }, 1500);
         });
 
@@ -2442,7 +2510,7 @@
             });
 
             // Add bounce animation to social icons
-            const socialIcons = document.querySelectorAll('a[href*="instagram"], a[href*="youtube"], a[href*="linkedin"]');
+            const socialIcons = document.querySelectorAll('a[href*="instagram"], a[href*="linkedin"], a[href*="mailto"]');
             socialIcons.forEach((icon, index) => {
                 icon.addEventListener('mouseenter', () => {
                     icon.style.animation = 'bounceIn 0.6s ease-out';
