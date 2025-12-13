@@ -2785,10 +2785,66 @@
             }
         });
 
-        // Featured Videos Functionality
+        // Featured Videos Functionality with Fallback Handling
         document.addEventListener('DOMContentLoaded', function() {
             const featuredVideos = document.querySelectorAll('.featured-video');
             const videoOverlays = document.querySelectorAll('.video-overlay');
+
+            // Handle video loading errors with automatic fallback
+            featuredVideos.forEach((video, index) => {
+                const container = video.closest('.relative');
+                
+                // Define fallback gradients and labels
+                const fallbacks = [
+                    { gradient: 'from-gray-700 to-gray-900', label: 'Video Preview', icon: 'text-[#9d2235]' },
+                    { gradient: 'from-purple-700 to-indigo-900', label: 'Drama Performance', icon: 'text-purple-600' },
+                    { gradient: 'from-green-700 to-teal-900', label: 'Yearbook Project', icon: 'text-green-600' },
+                    { gradient: 'from-green-700 to-emerald-900', label: 'Yearbook Project', icon: 'text-green-600' },
+                    { gradient: 'from-blue-700 to-cyan-900', label: 'Yearbook Project', icon: 'text-green-600' },
+                    { gradient: 'from-orange-700 to-red-900', label: 'Yearbook Project', icon: 'text-green-600' },
+                    { gradient: 'from-pink-700 to-purple-900', label: 'Cultural Event', icon: 'text-purple-600' },
+                    { gradient: 'from-yellow-700 to-orange-900', label: 'Interview Series', icon: 'text-blue-600' }
+                ];
+                
+                const fallback = fallbacks[index] || fallbacks[0];
+                
+                // Create fallback placeholder
+                const createFallback = () => {
+                    container.innerHTML = `
+                        <div class="w-full h-40 bg-gradient-to-br ${fallback.gradient} flex items-center justify-center relative overflow-hidden">
+                            <div class="text-center text-white">
+                                <div class="bg-white/20 rounded-full p-4 mb-2 mx-auto w-16 h-16 flex items-center justify-center backdrop-blur-sm">
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 5v10l8-5z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium">${fallback.label}</p>
+                            </div>
+                            <div class="absolute inset-0 opacity-10">
+                                <div class="w-full h-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 animate-pulse"></div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 ${fallback.icon}" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    `;
+                };
+                
+                // Set up error handling
+                video.addEventListener('error', createFallback);
+                video.addEventListener('stalled', createFallback);
+                
+                // Timeout fallback if video doesn't load in 5 seconds
+                setTimeout(() => {
+                    if (video.readyState === 0 || video.networkState === 3) {
+                        createFallback();
+                    }
+                }, 5000);
+            });
 
             // Create and append video modal
             const videoModal = document.createElement('div');
