@@ -58,6 +58,16 @@
             font-family: 'Merriweather', serif;
         }
 
+        /* Website Background */
+        body {
+            background-image: url('website backrground .jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f8f9fa;
+        }
+
         .somaiya-bg {
             background-color: var(--somaiya-red);
         }
@@ -870,16 +880,18 @@
     </section>
 
     <!-- Dean's Office Section -->
-    <section id="deans-office" class="py-20 bg-gray-50">
+    <section id="deans-office" class="py-20" style="background: transparent;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">From Dean's Office & Coordinator</h2>
-                <div class="w-24 h-1 somaiya-bg mx-auto"></div>
+                <div class="inline-block p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">From Dean's Office & Coordinator</h2>
+                    <div class="w-24 h-1 somaiya-bg mx-auto"></div>
+                </div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Card 1 -->
-                <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition border-t-4 border-[#9d2235]">
+                <div class="bg-white bg-opacity-95 p-8 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-[#9d2235]" style="backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
                             <img src="Dr. Urmi Thakkar.jpg" alt="Dr. Urmi Thakkar" class="w-full h-full object-contain">
@@ -908,7 +920,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition border-t-4 border-[#9d2235]">
+                <div class="bg-white bg-opacity-95 p-8 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-[#9d2235]" style="backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
                             <img src="Priyanka Pic.jpg" alt="Ms. Priyanka Shetty" class="w-full h-full object-contain">
@@ -936,22 +948,31 @@
     </section>
 
     <!-- Featured Videos Section -->
-    <section id="featured-videos" class="py-12 bg-white">
+    <section id="featured-videos" class="py-12" style="background-image: url('website background 3.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Featured Content</h2>
-                <p class="text-gray-600 text-sm max-w-lg mx-auto">Compelling stories and performances from our campus community.</p>
-                <div class="w-16 h-1 somaiya-bg mx-auto mt-3"></div>
+                <div class="inline-block p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Featured Content</h2>
+                    <p class="text-gray-600 text-sm max-w-lg mx-auto">Compelling stories and performances from our campus community.</p>
+                    <div class="w-16 h-1 somaiya-bg mx-auto mt-3"></div>
+                </div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
                 <!-- Video 1: Millennials And Newspapers -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
                     <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
                             <source src="Videos/Millennials And Newspapers _ Somaiya Voices.mp4" type="video/mp4">
                             <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-[#9d2235]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-3">
                         <div class="flex items-center mb-1">
@@ -972,10 +993,17 @@
                 <!-- Video 2: Presenting Rhapsody -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
                     <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
                             <source src="Videos/Presenting Rhapsody _ The official Drama Team of KJSCE.mp4" type="video/mp4">
                             <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-3">
                         <div class="flex items-center mb-1">
@@ -996,10 +1024,17 @@
                 <!-- Video 3: The Yearbook Project -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
                     <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
                             <source src="Videos/The Yearbook Project'19 _ EP01_ 'The Fire Alarm Hoax'.mp4" type="video/mp4">
                             <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-3">
                         <div class="flex items-center mb-1">
@@ -1017,13 +1052,144 @@
                     </div>
                 </div>
 
-                <!-- Video 4: Teachers Funny Stories -->
+                <!-- Video 4: The Yearbook Project EP02 - Prabha Sharma -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
                     <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover" controls preload="metadata" crossorigin="anonymous">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/VFpoOHRUMXdPc2dfMTA4MHA_out.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Series
+                            </div>
+                            <span class="text-xs text-gray-500">Yearbook Project '23</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            EP02 - Prabha Sharma
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            The Yearbook Project'23 featuring Prabha Sharma's story.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 5: The Yearbook Project EP01 - Paras Shah -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/S2JqUWhYblUwNm9fMTA4MHA_out.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Series
+                            </div>
+                            <span class="text-xs text-gray-500">Yearbook Project '23</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            EP01 - Paras Shah
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            The Yearbook Project'23 featuring Paras Shah's story.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 6: The Yearbook Project EP02 - Tap To The Top -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/eTlQOHIxUWw1bElfMTA4MHA_out.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Series
+                            </div>
+                            <span class="text-xs text-gray-500">Yearbook Project '19</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            EP02: 'Tap To The Top'
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Episode 2 of The Yearbook Project '19 series.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 7: Rangooli Raas - 2025 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
+                            <source src="Videos/Rangooli Raas - 2025_1080p.mp4" type="video/mp4">
+                            <p class="text-white p-3">Your browser does not support the video tag.</p>
+                        </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <div class="bg-purple-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
+                                Event
+                            </div>
+                            <span class="text-xs text-gray-500">HR Department</span>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">
+                            Rangooli Raas - 2025
+                        </h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Cultural event organized by HR Department, covered by Somaiya Voices.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 8: Teachers Funny Stories -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="relative bg-black">
+                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop preload="metadata" crossorigin="anonymous">
                             <source src="Videos/We Asked Teachers The Funniest Things Their Students Had Done Part_ 1 _ Somaiya Voices.mp4" type="video/mp4">
                             <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
+                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5z"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-3">
                         <div class="flex items-center mb-1">
@@ -1063,7 +1229,7 @@
     <section id="media-sponsor" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Student & Campus Network</h2>
-            <p class="text-gray-500 mb-12">Proudly representing flagship events</p>
+            <p class="text-gray-500 mb-12">Official student-led media body</p>
             
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-80">
                 <div class="p-6 grayscale hover:grayscale-0 transition duration-300">
@@ -1091,12 +1257,14 @@
     </section>
 
     <!-- Meet Our Team Section -->
-    <section id="meet-team" class="py-20 bg-gray-50">
+    <section id="meet-team" class="py-20" style="background-image: url('website background 2.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">Dedicated individuals working together to amplify student voices across Somaiya Vidyavihar</p>
-                <div class="w-24 h-1 somaiya-bg mx-auto"></div>
+                <div class="inline-block p-6 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                    <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">Dedicated individuals working together to amplify student voices across Somaiya Vidyavihar</p>
+                    <div class="w-24 h-1 somaiya-bg mx-auto"></div>
+                </div>
             </div>
 
             <!-- Horizontal Team Scroll -->
@@ -1472,12 +1640,14 @@
     </section>
 
     <!-- Newsletter Archives Section -->
-    <section id="newsletter-archives" class="py-8 bg-white">
+    <section id="newsletter-archives" class="py-8" style="background-image: url('website background 4.jpeg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-6">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Newsletter Archives</h2>
-                <p class="text-sm text-gray-600 mb-4 max-w-2xl mx-auto">The campus newspaper focusing on student voices and community stories from Somaiya Vidyavihar.</p>
-                <div class="w-16 h-1 somaiya-bg mx-auto"></div>
+                <div class="inline-block p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Newsletter Archives</h2>
+                    <p class="text-sm text-gray-600 mb-4 max-w-2xl mx-auto">The campus newspaper focusing on student voices and community stories from Somaiya Vidyavihar.</p>
+                    <div class="w-16 h-1 somaiya-bg mx-auto"></div>
+                </div>
             </div>
 
             <div class="max-w-3xl mx-auto">
@@ -2534,6 +2704,109 @@
             if (video) {
                 video.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
+        });
+
+        // Featured Videos Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const featuredVideos = document.querySelectorAll('.featured-video');
+            const videoOverlays = document.querySelectorAll('.video-overlay');
+
+            // Create and append video modal
+            const videoModal = document.createElement('div');
+            videoModal.id = 'videoModal';
+            videoModal.className = 'fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center p-4';
+            videoModal.innerHTML = `
+                <div class="bg-black rounded-lg max-w-4xl w-full max-h-[90vh] relative">
+                    <button id="closeVideoModal" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    <video id="modalVideo" class="w-full h-full rounded-lg" controls autoplay>
+                        <p class="text-white p-4">Your browser does not support the video tag.</p>
+                    </video>
+                </div>
+            `;
+            document.body.appendChild(videoModal);
+
+            const modalVideo = document.getElementById('modalVideo');
+            const closeModal = document.getElementById('closeVideoModal');
+
+            // Handle video overlay clicks for fullscreen view
+            videoOverlays.forEach((overlay, index) => {
+                overlay.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const video = featuredVideos[index];
+                    const videoSrc = video.querySelector('source').src;
+                    
+                    // Set modal video source and show modal
+                    modalVideo.innerHTML = `<source src="${videoSrc}" type="video/mp4">`;
+                    modalVideo.load();
+                    videoModal.classList.remove('hidden');
+                    
+                    // Pause the original video
+                    video.pause();
+                    
+                    // Prevent body scrolling
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close modal functionality
+            function closeVideoModal() {
+                videoModal.classList.add('hidden');
+                modalVideo.pause();
+                document.body.style.overflow = '';
+            }
+
+            closeModal.addEventListener('click', closeVideoModal);
+            
+            // Close modal when clicking outside video
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+                    closeVideoModal();
+                }
+            });
+
+            // Handle video hover effects
+            featuredVideos.forEach(video => {
+                video.addEventListener('mouseenter', function() {
+                    this.style.transition = 'transform 0.3s ease';
+                    this.style.transform = 'scale(1.02)';
+                });
+                
+                video.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Ensure videos are muted and handle autoplay
+            featuredVideos.forEach(video => {
+                video.muted = true;
+                video.volume = 0;
+                
+                // Handle intersection observer for better performance
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.play().catch(e => console.log('Auto-play prevented:', e));
+                        } else {
+                            entry.target.pause();
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(video);
+            });
         });
     </script>
 </body>
