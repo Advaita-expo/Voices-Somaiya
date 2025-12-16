@@ -5,4 +5,3 @@
 "Aiza Mistry Content & PR.jpg" filter=lfs diff=lfs merge=lfs -text
 "Nitin Choudhary_.jpg" filter=lfs diff=lfs merge=lfs -text
 "Saachi Chunekar_PR department.jpg" filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
