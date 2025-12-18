@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life - Fests & Clubs | Somaiya Voices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --somaiya-red: #9d2235;
+            --somaiya-red-dark: #7a1b29;
+            --light-gray: #f7f7f7;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .section-header {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--somaiya-red);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        
+        .section-title-white {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title, .section-title-white {
+                font-size: 2rem;
+            }
+        }
+        
+        .fest-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--somaiya-red);
+        }
+        
+        .fest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .club-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .club-card:hover {
+            background: var(--somaiya-red);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* Hero background animation */
+        @keyframes panLeftToRight {
+            0% {
+                transform: scale(1.2) translateX(-10%);
+            }
+            100% {
+                transform: scale(1.2) translateX(10%);
+            }
+        }
+        
+        .hero-bg-animate {
+            animation: panLeftToRight 20s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center gap-4">
+                    <img src="Voices logo black.png" alt="Voices Logo" class="h-10">
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">About</a>
+                    <a href="videos.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Videos</a>
+                    <a href="team.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Team</a>
+                    <a href="newsletter.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Newsletter</a>
+                    <a href="campus-life.html" class="text-[#9d2235] font-semibold">Campus Life</a>
+                    <a href="connect.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Connect</a>
+                </div>
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-600 hover:text-[#9d2235]">Home</a>
+                <a href="about.html" class="block text-gray-600 hover:text-[#9d2235]">About</a>
+                <a href="videos.html" class="block text-gray-600 hover:text-[#9d2235]">Videos</a>
+                <a href="team.html" class="block text-gray-600 hover:text-[#9d2235]">Team</a>
+                <a href="newsletter.html" class="block text-gray-600 hover:text-[#9d2235]">Newsletter</a>
+                <a href="campus-life.html" class="block text-[#9d2235] font-semibold">Campus Life</a>
+                <a href="connect.html" class="block text-gray-600 hover:text-[#9d2235]">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] min-h-[400px] overflow-hidden">
+        <div class="absolute inset-0 bg-[#9d2235]">
+            <img src="https://www.somaiya.edu/upload_file/banner_images/banner-thumbnail.jpg" alt="Somaiya Campus" class="w-full h-full object-cover opacity-40 hero-bg-animate">
+        </div>
+        <div class="absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 w-full">
+                <p class="text-white/80 text-sm font-bold uppercase tracking-wider mb-4">Explore</p>
+                <h1 class="section-title-white max-w-3xl mb-6">Campus Life</h1>
+                <p class="text-xl text-white/90 max-w-2xl">Discover the vibrant fests and diverse clubs that make Somaiya Vidyavihar a thriving community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fests Section -->
+    <section class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="section-header">Annual Celebrations</p>
+                <h2 class="section-title">Campus Fests</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">From cultural extravaganzas to technical showcases, our fests bring the entire campus together in celebration.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Fest Cards -->
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">AURA</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
+                    <p class="text-gray-600 text-sm">SSBAS + SSHSS + SKSCBS</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">SYMPHONY</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
+                    <p class="text-gray-600 text-sm">K J Somaiya School of Engineering</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">ABHIYANTIKI / ABHIYANTA</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Technical Fest</p>
+                    <p class="text-gray-600 text-sm">K J Somaiya School of Engineering</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">MÉLANGE</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
+                    <p class="text-gray-600 text-sm">K J Somaiya Institute of Management</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">SPECTRUM / DESIGN WEEK</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Design Fest</p>
+                    <p class="text-gray-600 text-sm">Somaiya School of Design</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">HOONER</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
+                    <p class="text-gray-600 text-sm">K J Somaiya College of Arts & Commerce</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">SURABHI</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
+                    <p class="text-gray-600 text-sm">K J Somaiya College of Science & Commerce</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">ASMITA</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
+                    <p class="text-gray-600 text-sm">K J Somaiya College of Science & Commerce</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">SOMAIYA YOUTH FESTIVAL</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">University Fest</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                
+                <div class="fest-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">SOMAIYA MUSIC FESTIVAL</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Music Fest</p>
+                    <p class="text-gray-600 text-sm">Maya Somaiya School of Music & Performing Arts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="section-header">Student Organizations</p>
+                <h2 class="section-title">Campus Clubs</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Join a community of passionate individuals. Our clubs offer opportunities to learn, grow, and make lasting connections.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                <!-- Club Cards -->
+                <div class="club-card">
+                    <span class="font-semibold">ACM</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Somaiya Voices</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Dautyam</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Union of Animals</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">DataZen</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Rhapsody</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Illuminati</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Parvaah</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Insignia</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Gyrations</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Shutterbugs</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Octavium</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Yugandhar</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Palinoia</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Drushti</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">BloomBox</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">CodeCell</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Emfinity</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">MediaTheque</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Investor Forum</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Debating Society</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Storytelling Society</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">DSW Committee</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Glitterati</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Kaizan Club</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">Vision</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">AlumniCell</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">SAHAS</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">PUSH</span>
+                </div>
+                <div class="club-card">
+                    <span class="font-semibold">CSI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-[#9d2235]">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Want to Feature Your Club or Fest?</h2>
+            <p class="text-xl opacity-90 mb-8">
+                We're always looking to highlight the amazing activities happening on campus. Reach out to us!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="connect.html" class="inline-flex items-center justify-center bg-white text-[#9d2235] px-8 py-4 font-semibold hover:bg-gray-100 transition-colors">
+                    Get in Touch
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-800 pb-12 mb-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center gap-8">
+                        <a href="index.html">
+                            <img src="voices Logo.png" alt="Voices Logo" class="h-14 w-auto">
+                        </a>
+                        <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar Logo" class="h-14 w-auto">
+                    </div>
+                </div>
+                <nav class="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-400">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="videos.html" class="hover:text-white transition-colors">Videos</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                    <a href="campus-life.html" class="hover:text-white transition-colors">Campus Life</a>
+                    <a href="connect.html" class="hover:text-white transition-colors">Connect</a>
+                </nav>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2025 Somaiya Vidyavihar University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
