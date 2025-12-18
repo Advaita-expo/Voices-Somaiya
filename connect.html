@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - Somaiya Voices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --somaiya-red: #9d2235;
+            --somaiya-red-dark: #7a1b29;
+            --light-gray: #f7f7f7;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .section-header {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--somaiya-red);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--somaiya-red);
+            font-weight: 600;
+            transition: gap 0.3s ease;
+        }
+        
+        .link-arrow:hover {
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center gap-4">
+                    <img src="Voices logo black.png" alt="Voices Logo" class="h-10">
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">About</a>
+                    <a href="videos.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Videos</a>
+                    <a href="team.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Team</a>
+                    <a href="newsletter.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Newsletter</a>
+                    <a href="connect.html" class="text-[#9d2235] font-semibold">Connect</a>
+                </div>
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-600 hover:text-[#9d2235]">Home</a>
+                <a href="about.html" class="block text-gray-600 hover:text-[#9d2235]">About</a>
+                <a href="videos.html" class="block text-gray-600 hover:text-[#9d2235]">Videos</a>
+                <a href="team.html" class="block text-gray-600 hover:text-[#9d2235]">Team</a>
+                <a href="newsletter.html" class="block text-gray-600 hover:text-[#9d2235]">Newsletter</a>
+                <a href="connect.html" class="block text-[#9d2235] font-semibold">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="section-header">Stay Connected</p>
+            <h1 class="section-title mb-6">Connect With Us</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Stay connected with us across all platforms and be part of our vibrant community.</p>
+        </div>
+    </section>
+
+    <!-- Contact & Social Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Contact Information -->
+                <div class="bg-[#f7f7f7] p-8 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-[#9d2235] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Get in Touch</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="mailto:voices@somaiya.edu" class="flex items-center p-4 bg-white hover:bg-gray-50 transition-colors group">
+                            <i data-lucide="mail" class="w-5 h-5 text-[#9d2235] mr-4 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-sm text-gray-500">Email Us</p>
+                                <p class="text-[#9d2235] font-semibold group-hover:underline">voices@somaiya.edu</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://chat.whatsapp.com/HvRbCrwHGojFdDf3zTYIiR?mode=ems_copy_t" target="_blank" class="flex items-center p-4 bg-white hover:bg-gray-50 transition-colors group">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-[#9d2235] mr-4 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-sm text-gray-500">WhatsApp Community</p>
+                                <p class="text-[#9d2235] font-semibold group-hover:underline">Join Our Community</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Follow Us -->
+                <div class="bg-[#f7f7f7] p-8 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-[#9d2235] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="share-2" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Follow Us</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="https://www.instagram.com/somaiyavoices" target="_blank" 
+                           class="flex items-center p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300">
+                            <i data-lucide="instagram" class="w-5 h-5 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold">Instagram</p>
+                                <p class="text-sm opacity-90">@somaiyavoices</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/company/somaiya-voices" target="_blank" 
+                           class="flex items-center p-4 bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300">
+                            <i data-lucide="linkedin" class="w-5 h-5 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold">LinkedIn</p>
+                                <p class="text-sm opacity-90">Somaiya Voices</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Watch & Tweet -->
+                <div class="bg-[#f7f7f7] p-8 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-[#9d2235] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="video" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Watch & Tweet</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="https://youtube.com/@somaiyavoices?si=XjXlGAWfE-KoGU-M" target="_blank" 
+                           class="flex items-center p-4 bg-red-500 text-white hover:bg-red-600 transition-all duration-300">
+                            <i data-lucide="youtube" class="w-5 h-5 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold">YouTube</p>
+                                <p class="text-sm opacity-90">@somaiyavoices</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://x.com/somaiya_voices" target="_blank" 
+                           class="flex items-center p-4 bg-black text-white hover:bg-gray-800 transition-all duration-300">
+                            <i data-lucide="twitter" class="w-5 h-5 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold">Twitter / X</p>
+                                <p class="text-sm opacity-90">@somaiya_voices</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share Your Story Section -->
+    <section class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="section-header">Share Your Voice</p>
+                    <h2 class="section-title mb-6">Have a Story to Tell?</h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Whether it's an inspiring journey, a campus event, or an achievement worth celebrating, 
+                        we want to hear from you. Your story could inspire thousands of students across Somaiya.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-[#9d2235] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Student achievements and milestones</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-[#9d2235] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Club and committee activities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-[#9d2235] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Campus events and celebrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 bg-[#9d2235] rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Personal experiences and journeys</span>
+                        </li>
+                    </ul>
+                    <a href="mailto:voices@somaiya.edu" class="inline-flex items-center bg-[#9d2235] text-white px-8 py-4 font-semibold hover:bg-[#7a1b29] transition-colors">
+                        Submit Your Story
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-12">
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-[#9d2235] rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="pen-tool" class="w-12 h-12 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Write for Voices</h3>
+                        <p class="text-gray-600 mb-6">
+                            Interested in joining our content team? We're always looking for passionate writers, 
+                            photographers, and storytellers.
+                        </p>
+                        <a href="mailto:voices@somaiya.edu" class="link-arrow">
+                            Learn about joining our team
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-[#9d2235]">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Be Part of Our Story</h2>
+            <p class="text-xl opacity-90 mb-8">
+                Whether you're sharing your experiences, following our content, or joining our community conversations, 
+                every connection helps us amplify the diverse voices of Somaiya Vidyavihar.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:voices@somaiya.edu" 
+                   class="bg-white text-[#9d2235] px-8 py-4 font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
+                    Send Us a Story
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                <a href="https://chat.whatsapp.com/HvRbCrwHGojFdDf3zTYIiR?mode=ems_copy_t" target="_blank"
+                   class="border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-[#9d2235] transition-colors inline-flex items-center justify-center">
+                    Join WhatsApp Community
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-800 pb-12 mb-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center gap-8">
+                        <a href="index.html">
+                            <img src="voices Logo.png" alt="Voices Logo" class="h-14 w-auto">
+                        </a>
+                        <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar Logo" class="h-14 w-auto">
+                    </div>
+                </div>
+                <nav class="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-400">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="videos.html" class="hover:text-white transition-colors">Videos</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                    <a href="connect.html" class="hover:text-white transition-colors">Connect</a>
+                </nav>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2025 Somaiya Vidyavihar University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

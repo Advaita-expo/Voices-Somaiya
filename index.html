@@ -41,16 +41,19 @@
             }
         }
 
-        /* Somaiya Brand Colors (Approximate based on reference) */
+        /* Somaiya Brand Colors - Gates Foundation Inspired */
         :root {
             --somaiya-red: #9d2235; 
             --somaiya-red-dark: #7a1b29;
-            --off-white: #fcfcfc;
+            --off-white: #ffffff;
+            --light-gray: #f7f7f7;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
         }
 
         body {
             font-family: 'Nunito Sans', sans-serif;
-            color: #333;
+            color: var(--text-dark);
             background-color: var(--off-white);
         }
 
@@ -58,14 +61,10 @@
             font-family: 'Merriweather', serif;
         }
 
-        /* Website Background */
+        /* Gates Foundation Style - Clean White Background */
         body {
-            background-image: url('website backrground .jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
+            background-image: none;
         }
 
         .somaiya-bg {
@@ -76,6 +75,7 @@
             color: var(--somaiya-red);
         }
 
+        /* Gates Foundation Style Navigation */
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
@@ -85,8 +85,8 @@
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
-            bottom: -4px;
+            height: 3px;
+            bottom: -8px;
             left: 0;
             background-color: var(--somaiya-red);
             transition: width 0.3s ease;
@@ -94,6 +94,87 @@
 
         .nav-link:hover::after {
             width: 100%;
+        }
+
+        /* Gates Foundation Style - Large Impact Numbers */
+        .impact-number {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--somaiya-red);
+        }
+
+        /* Gates Foundation Style - Section Headers */
+        .section-header {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--somaiya-red);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Gates Foundation Style - Cards */
+        .gf-card {
+            background: #ffffff;
+            border-radius: 0;
+            box-shadow: none;
+            border-bottom: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        .gf-card:hover {
+            background: var(--light-gray);
+        }
+
+        /* Gates Foundation Style - Quote Cards */
+        .quote-card {
+            background: var(--light-gray);
+            padding: 3rem;
+            position: relative;
+        }
+
+        .quote-card::before {
+            content: '"';
+            font-family: 'Merriweather', serif;
+            font-size: 6rem;
+            color: var(--somaiya-red);
+            opacity: 0.2;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            line-height: 1;
+        }
+
+        /* Gates Foundation Style - Link Arrows */
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            color: var(--somaiya-red);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .link-arrow:hover {
+            color: var(--somaiya-red-dark);
+        }
+
+        .link-arrow svg {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .link-arrow:hover svg {
+            transform: translateX(4px);
         }
 
         /* Mobile Menu Animation */
@@ -723,20 +804,23 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex space-x-8 items-center">
-                    <a href="#who-we-are" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
-                        About Us
+                    <a href="index.html" class="text-sm font-bold text-white nav-link uppercase tracking-wide">
+                        Home
                     </a>
-                    <a href="#deans-office" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
-                        From Dean's Office
+                    <a href="about.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
+                        About
                     </a>
-                    <a href="#media-sponsor" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
-                        Student & Campus Network
+                    <a href="videos.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
+                        Videos
                     </a>
-                    <a href="#meet-team" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
-                        Meet Our Team
+                    <a href="team.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
+                        Team
                     </a>
-                    <a href="#newsletter-archives" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
+                    <a href="newsletter.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
                         Newsletter
+                    </a>
+                    <a href="connect.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
+                        Connect
                     </a>
                     
                     <!-- Social Icons (as seen in image reference) -->
@@ -768,10 +852,12 @@
                 <i data-lucide="x" class="w-8 h-8"></i>
             </button>
             <div class="flex flex-col space-y-6 mt-8">
-                <a href="#who-we-are" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">About Us</a>
-                <a href="#deans-office" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">From Dean's Office & Coordinator</a>
-                <a href="#media-sponsor" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Official Student & Campus Network</a>
-                <a href="#meet-team" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Meet Our Team</a>
+                <a href="index.html" class="text-lg font-semibold text-[#9d2235]">Home</a>
+                <a href="about.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">About</a>
+                <a href="videos.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Videos</a>
+                <a href="team.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Team</a>
+                <a href="newsletter.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Newsletter</a>
+                <a href="connect.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Connect</a>
                 <div class="flex space-x-4 mt-4">
                     <a href="https://www.instagram.com/somaiyavoices" target="_blank" class="text-gray-500"><i data-lucide="instagram"></i></a>
                     <a href="https://www.linkedin.com/company/somaiya-voices" target="_blank" class="text-gray-500"><i data-lucide="linkedin"></i></a>
@@ -795,1081 +881,443 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="who-we-are" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <!-- About Us Section - Gates Foundation Style -->
+    <section id="who-we-are" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Us</h2>
-                <div class="w-24 h-1 somaiya-bg mx-auto"></div>
+                <p class="section-header">About</p>
+                <h2 class="section-title">Somaiya Vidyavihar</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                <!-- Instagram Post Embed -->
-                <div class="order-1 md:order-1 slide-in-left">
-                    <div class="w-full max-w-md mx-auto">
-                        <!-- Instagram Card Fallback -->
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden border">
-                            <div class="p-4">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 p-0.5">
-                                        <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                            <i data-lucide="instagram" class="w-6 h-6 text-gray-800"></i>
-                                        </div>
-                                    </div>
-                                    <div class="ml-3">
-                                        <h3 class="font-semibold text-gray-900">somaiyavoices</h3>
-                                        <p class="text-sm text-gray-500">3,376 followers</p>
-                                    </div>
-                                </div>
-                                
-                                <!-- Post Image Placeholder -->
-                                <div class="bg-gray-100 rounded-lg h-64 mb-4 flex items-center justify-center relative overflow-hidden">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-[#9d2235] to-[#7a1b29] opacity-90"></div>
-                                    <div class="relative text-center text-white p-6">
-                                        <div class="mb-4">
-                                            <img src="Voices logo white.png" alt="Voices Logo" class="h-16 mx-auto mb-2" onerror="this.style.display='none'">
-                                        </div>
-                                        <h4 class="text-lg font-bold mb-2">VOICES COUNCIL</h4>
-                                        <p class="text-sm opacity-90">2024-25</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="space-y-2 mb-4">
-                                    <p class="text-sm text-gray-800">
-                                        <span class="font-semibold">somaiyavoices</span> With great enthusiasm, we are very proud to introduce you all to our Voices Council for the year 2024-25! 🎉
-                                    </p>
-                                    <p class="text-sm text-gray-600">
-                                        We, the team behind Somaiya Voices are honored to have this great opportunity and we look forward to making this year a memorable one... <span class="text-[#9d2235]">more</span>
-                                    </p>
-                                </div>
-                                
-                                <div class="flex items-center justify-between text-gray-500 text-sm">
-                                    <div class="flex items-center space-x-4">
-                                        <button class="flex items-center space-x-1 hover:text-red-500 transition">
-                                            <i data-lucide="heart" class="w-4 h-4"></i>
-                                            <span>89</span>
-                                        </button>
-                                        <button class="flex items-center space-x-1 hover:text-blue-500 transition">
-                                            <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                            <span>6</span>
-                                        </button>
-                                    </div>
-                                    <a href="htt ps://www.instagram.com/somaiyavoices/" target="_blank" class="text-[#9d2235] hover:text-[#7a1b29] font-medium text-sm transition">
-                                        View on Instagram
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Photo Holder -->
+                <div class="order-1 lg:order-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-[#f7f7f7]">
+                        <img src="https://www.somaiya.edu.in/assets/university/img/history/campus.jpg" alt="Somaiya Campus" class="w-full h-full object-cover">
                     </div>
                 </div>
                 
-                <!-- About Us Content -->
-                <!-- Updated with new narrative content -->
-                <div class="order-2 md:order-2 slide-in-right">
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        <span class="font-bold text-gray-900">Voices</span> is the <span class="font-semibold text-[#9d2235]">student-led media body of Somaiya</span> created <span class="font-semibold">for the students, from the students, and by the students</span>. It exists to capture the <span class="font-semibold text-[#9d2235]">heartbeat of our campus</span> and everything that makes Somaiya feel alive. We document the <span class="font-semibold">moments we celebrate, the stories that quietly unfold in the background</span>, and the experiences that shape us in ways we often realise only much later.
+                <!-- About Content -->
+                <div class="order-2 lg:order-2">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+                        <span class="font-bold text-gray-900">Somaiya Vidyavihar</span> is one of India's <span class="font-semibold text-[#9d2235]">premier educational ecosystems</span>, established by the visionary Padmabhushan Shri K.J. Somaiya in 1959. Spread across a sprawling 65-acre campus in Mumbai, it is home to <span class="font-semibold">35+ institutions</span> offering programs from kindergarten to doctoral studies, nurturing over <span class="font-semibold">35,000 students</span> every year.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        Built on <span class="font-bold text-[#9d2235]">creativity, connection and community</span>, Voices is <span class="font-semibold">much more than a media team</span>. It is a space where <span class="font-semibold">every student finds room to express, to be seen and to be heard</span>. It is a platform that brings together different perspectives, emotions and journeys to create a shared tapestry of memories. <span class="font-bold text-gray-900">Somaiya is not just an educational institution. It is a family made up of countless voices</span>, each one carrying its own dreams, struggles, triumphs and stories.
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+                        With a commitment to <span class="font-bold text-[#9d2235]">excellence, innovation, and holistic development</span>, Somaiya Vidyavihar has become a beacon of quality education across disciplines including Engineering, Management, Science, Humanities, Medicine, and more. The campus is a vibrant community where <span class="font-semibold">knowledge meets culture, tradition embraces innovation</span>, and students transform into future leaders.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        And just like <span class="font-bold text-[#9d2235]">every family has a story to tell, this is ours</span>.
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8 text-justify">
+                        <span class="font-bold text-gray-900">Voices</span> is the <span class="font-semibold text-[#9d2235]">official student-led media body</span> of Somaiya Vidyavihar, created for the students, from the students, and by the students. We capture the heartbeat of this vibrant campus through stories, videos, and content that celebrate our community.
                     </p>
+                    <a href="about.html" class="link-arrow text-lg">
+                        Know more about us
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Dean's Office Section -->
-    <section id="deans-office" class="py-20" style="background: transparent;">
-        <div class="container mx-auto px-4">
+    <!-- Chancellor & Vice Chancellor Messages - Gates Foundation Style -->
+    <section id="leadership-messages" class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <div class="inline-block p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">From Dean's Office & Coordinator</h2>
-                    <div class="w-24 h-1 somaiya-bg mx-auto"></div>
-                </div>
+                <p class="section-header">Leadership</p>
+                <h2 class="section-title">From the Chancellor & Vice Chancellor</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Visionary leadership guiding Somaiya Vidyavihar towards excellence in education and holistic development.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Card 1 -->
-                <div class="bg-white bg-opacity-95 p-8 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-[#9d2235]" style="backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
-                            <img src="Dr. Urmi Thakkar.jpg" alt="Dr. Urmi Thakkar" class="w-full h-full object-contain">
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900">Dr Urmi Thakkar</h3>
-                            <p class="text-sm text-[#9d2235] font-semibold">Dean Student Welfare</p>
-                        </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Chancellor Card -->
+                <div class="bg-white">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://kjsim.somaiya.edu/assets_v3/kjsim/img/genesis/samir-sir.jpg" alt="Shri Samir Somaiya" class="w-full h-full object-cover">
                     </div>
-                    <div class="relative">
-                        <i data-lucide="quote" class="text-gray-200 w-12 h-12 absolute -top-2 -left-2 -z-10"></i>
-                        <div id="dean-preview" class="">
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"At Somaiya Vidyavihar every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">The university is known for its excellent infrastructure for teaching, learning, research and eco-friendly lush green campus..."</p>
+                    <div class="p-8">
+                        <p class="text-xs font-bold text-[#9d2235] uppercase tracking-wider mb-2">Chancellor</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Shri Samir Somaiya</h3>
+                        <p class="text-gray-500 text-sm mb-6">Chancellor, Somaiya Vidyavihar University</p>
+                        
+                        <div class="quote-card mb-6">
+                            <p class="text-gray-700 text-sm leading-relaxed relative z-10">
+                                "Education is not just about imparting knowledge; it is about nurturing minds, building character, and empowering individuals to become responsible citizens who contribute meaningfully to society. At Somaiya, we are committed to creating an environment where every student can discover their potential and pursue excellence."
+                            </p>
                         </div>
-                        <div id="dean-full" class="hidden">
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"At Somaiya Vidyavihar every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">The university is known for its excellent infrastructure for teaching, learning, research and eco-friendly lush green campus. Also we have Sports academy with multiple facilities on campus.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">We have passion of creating Education for all the students in a way it's freedom for our country. Our main aim is to give good quality modern education including a strong component of culture, inculcation of values, awareness of the environment, physical activities and physical education. We want our students to get good Quality Education and give flexibility in curriculum to choose things based on their interests.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">Our students on campus have reached heights along with Education in different areas of Sports till International level, launching ISRO Satellite and various start ups reaching multinational companies.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">The office of Dean Students' Welfare works for the holistic and comprehensive development of our students. Here, all the activities are undertaken as a measure to promote ample opportunities to the youth to enhance their skills and talents and give them opportunities at national and international level too. Our aim is that every student has core values of integrity, compassion and respect for others. To unleash the talent of our students, we meticulously plan and promote physical as well as cultural activities round the year which include indoor/ outdoor sports events, youth festivals, clubs, and subject related societies. Besides this, my office also ensures to maintain discipline among our students keeping in view their well-being.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed">At this juncture, I must thank to our visionary Vice Chancellor Prof. Dr. Prof V N Rajsekaran Pillai , who is always keen and determined to help the students in the best possible way."</p>
-                        </div>
-                        <button onclick="toggleDeanContent()" id="dean-toggle" class="mt-4 text-[#9d2235] hover:text-[#7a1b29] font-semibold text-sm transition">Read More</button>
+                        
+                        <a href="#" class="link-arrow">
+                            Learn more about our vision
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white bg-opacity-95 p-8 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-[#9d2235]" style="backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mr-4">
-                            <img src="Priyanka Pic.jpg" alt="Ms. Priyanka Shetty" class="w-full h-full object-contain">
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900">Ms. Priyanka Shetty</h3>
-                            <p class="text-sm text-[#9d2235] font-semibold">Assistant Manager – Student Welfare</p>
-                        </div>
+                <!-- Vice Chancellor Card -->
+                <div class="bg-white">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Presidentmu.jpg/500px-Presidentmu.jpg" alt="Vice Chancellor" class="w-full h-full object-cover">
                     </div>
-                    <div class="relative">
-                        <i data-lucide="quote" class="text-gray-200 w-12 h-12 absolute -top-2 -left-2 -z-10"></i>
-                        <div id="coordinator-preview" class="">
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"Ms. Priyanka Shetty is a committed student welfare professional with a strong passion for supporting student growth and well-being. An alumna of Somaiya Vidyavihar, she completed both her graduation and post-graduation from the institution..."</p>
+                    <div class="p-8">
+                        <p class="text-xs font-bold text-[#9d2235] uppercase tracking-wider mb-2">Vice Chancellor</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Prof. Dr. V. N. Rajasekharan Pillai</h3>
+                        <p class="text-gray-500 text-sm mb-6">Vice Chancellor, Somaiya Vidyavihar University</p>
+                        
+                        <div class="quote-card mb-6">
+                            <p class="text-gray-700 text-sm leading-relaxed relative z-10">
+                                "Our mission at Somaiya Vidyavihar is to provide quality education that combines academic rigor with practical skills, ethical values, and a global perspective. We strive to create future leaders who will drive innovation and positive change in the world."
+                            </p>
                         </div>
-                        <div id="coordinator-full" class="hidden">
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">"Ms. Priyanka Shetty is a committed student welfare professional with a strong passion for supporting student growth and well-being. An alumna of Somaiya Vidyavihar, she completed both her graduation and post-graduation from the institution, and now proudly serves her alma mater in a key role.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed mb-4">Currently, as Assistant Manager – Student Welfare at Somaiya Vidyavihar, she plays an instrumental role in creating a vibrant and supportive campus environment. From organizing events and student engagement activities to conducting stress management and mental well-being initiatives, Priyanka ensures that students are nurtured both academically and emotionally. She is also actively involved in planning and executing internship fairs and other career development initiatives, helping students prepare for life beyond college.</p>
-                            <p class="text-gray-600 italic text-sm leading-relaxed">Her dedication, warmth, and student-first approach have made her an integral part of many major events and welfare programs across the campus."</p>
-                        </div>
-                        <button onclick="toggleCoordinatorContent()" id="coordinator-toggle" class="mt-4 text-[#9d2235] hover:text-[#7a1b29] font-semibold text-sm transition">Read More</button>
+                        
+                        <a href="#" class="link-arrow">
+                            Read the Vice Chancellor's message
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Videos Section -->
-    <section id="featured-videos" class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Featured Content</h2>
-                <p class="text-gray-600 text-sm max-w-lg mx-auto">Compelling stories and performances from our campus community.</p>
-                <div class="w-16 h-1 somaiya-bg mx-auto mt-3"></div>
+    <!-- Dean's Office Section - Gates Foundation Style -->
+    <section id="deans-office" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="section-header">Student Welfare</p>
+                <h2 class="section-title">From the Dean's Office</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Dedicated to the holistic development and well-being of every student.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Dean Card -->
+                <div class="bg-[#f7f7f7] p-8 lg:p-12">
+                    <div class="flex items-start mb-8">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mr-6 flex-shrink-0">
+                            <img src="Dr. Urmi Thakkar.jpg" alt="Dr. Urmi Thakkar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">Dr. Urmi Thakkar</h3>
+                            <p class="text-[#9d2235] font-semibold">Dean Student Welfare</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div id="dean-preview">
+                            <p class="text-gray-700 leading-relaxed mb-4">"At Somaiya Vidyavihar every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
+                            <p class="text-gray-700 leading-relaxed">The university is known for its excellent infrastructure for teaching, learning, research and eco-friendly lush green campus..."</p>
+                        </div>
+                        <div id="dean-full" class="hidden">
+                            <p class="text-gray-700 leading-relaxed mb-4">"At Somaiya Vidyavihar every student is unique and we ensure that each and every student on our campus gives the best not only to make their future bright but also to be the good citizen of our country and give the best to the society.</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">The university is known for its excellent infrastructure for teaching, learning, research and eco-friendly lush green campus. Also we have Sports academy with multiple facilities on campus.</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">We have passion of creating Education for all the students in a way it's freedom for our country. Our main aim is to give good quality modern education including a strong component of culture, inculcation of values, awareness of the environment, physical activities and physical education. We want our students to get good Quality Education and give flexibility in curriculum to choose things based on their interests.</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">Our students on campus have reached heights along with Education in different areas of Sports till International level, launching ISRO Satellite and various start ups reaching multinational companies.</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">The office of Dean Students' Welfare works for the holistic and comprehensive development of our students. Here, all the activities are undertaken as a measure to promote ample opportunities to the youth to enhance their skills and talents and give them opportunities at national and international level too. Our aim is that every student has core values of integrity, compassion and respect for others. To unleash the talent of our students, we meticulously plan and promote physical as well as cultural activities round the year which include indoor/ outdoor sports events, youth festivals, clubs, and subject related societies. Besides this, my office also ensures to maintain discipline among our students keeping in view their well-being.</p>
+                            <p class="text-gray-700 leading-relaxed">At this juncture, I must thank to our visionary Vice Chancellor Prof. Dr. Prof V N Rajsekaran Pillai , who is always keen and determined to help the students in the best possible way."</p>
+                        </div>
+                        <button onclick="toggleDeanContent()" id="dean-toggle" class="mt-6 link-arrow">
+                            Read More
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Coordinator Card -->
+                <div class="bg-[#f7f7f7] p-8 lg:p-12">
+                    <div class="flex items-start mb-8">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mr-6 flex-shrink-0">
+                            <img src="Priyanka Pic.jpg" alt="Ms. Priyanka Shetty" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">Ms. Priyanka Shetty</h3>
+                            <p class="text-[#9d2235] font-semibold">Assistant Manager – Student Welfare</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div id="coordinator-preview">
+                            <p class="text-gray-700 leading-relaxed">"Ms. Priyanka Shetty is a committed student welfare professional with a strong passion for supporting student growth and well-being. An alumna of Somaiya Vidyavihar, she completed both her graduation and post-graduation from the institution..."</p>
+                        </div>
+                        <div id="coordinator-full" class="hidden">
+                            <p class="text-gray-700 leading-relaxed mb-4">"Ms. Priyanka Shetty is a committed student welfare professional with a strong passion for supporting student growth and well-being. An alumna of Somaiya Vidyavihar, she completed both her graduation and post-graduation from the institution, and now proudly serves her alma mater in a key role.</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">Currently, as Assistant Manager – Student Welfare at Somaiya Vidyavihar, she plays an instrumental role in creating a vibrant and supportive campus environment. From organizing events and student engagement activities to conducting stress management and mental well-being initiatives, Priyanka ensures that students are nurtured both academically and emotionally. She is also actively involved in planning and executing internship fairs and other career development initiatives, helping students prepare for life beyond college.</p>
+                            <p class="text-gray-700 leading-relaxed">Her dedication, warmth, and student-first approach have made her an integral part of many major events and welfare programs across the campus."</p>
+                        </div>
+                        <button onclick="toggleCoordinatorContent()" id="coordinator-toggle" class="mt-6 link-arrow">
+                            Read More
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Videos Section - Gates Foundation Style -->
+    <section id="featured-videos" class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+                <div>
+                    <p class="section-header">Videos</p>
+                    <h2 class="section-title mb-0">Featured Content</h2>
+                </div>
+                <a href="videos.html" class="link-arrow mt-4 md:mt-0">
+                    See all videos
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Video 1: Teachers -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                <div class="bg-white group cursor-pointer">
+                    <div class="relative aspect-video overflow-hidden">
+                        <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
                             <source src="Videos/teachers.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-[#9d2235]" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M8 5v10l8-5z"/>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-[#9d2235] text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Interview
-                            </div>
-                            <span class="text-xs text-gray-500">Somaiya Voices</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Teachers
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            Engaging conversations with our beloved faculty members.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
+                    <div class="p-4">
+                        <p class="text-xs font-bold text-[#9d2235] uppercase tracking-wider mb-2">Interview</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#9d2235] transition-colors">Teachers</h3>
+                        <p class="text-gray-600 text-sm">Engaging conversations with our beloved faculty members.</p>
                     </div>
                 </div>
 
                 <!-- Video 2: Millennials and Newspaper -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                <div class="bg-white group cursor-pointer">
+                    <div class="relative aspect-video overflow-hidden">
+                        <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
                             <source src="Videos/milennials-and-newspaper.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M8 5v10l8-5z"/>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-purple-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Story
-                            </div>
-                            <span class="text-xs text-gray-500">Somaiya Voices</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Millennials and Newspaper
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            Exploring how young voices are shaping modern journalism.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
+                    <div class="p-4">
+                        <p class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">Story</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#9d2235] transition-colors">Millennials and Newspaper</h3>
+                        <p class="text-gray-600 text-sm">Exploring how young voices are shaping modern journalism.</p>
                     </div>
                 </div>
 
                 <!-- Video 3: Rangilo Raas -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                <div class="bg-white group cursor-pointer">
+                    <div class="relative aspect-video overflow-hidden">
+                        <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
                             <source src="Videos/rangilo-raas.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M8 5v10l8-5z"/>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Event
-                            </div>
-                            <span class="text-xs text-gray-500">Cultural Performance</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Rangilo Raas
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            Traditional dance performance celebrating cultural heritage.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
+                    <div class="p-4">
+                        <p class="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">Event</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#9d2235] transition-colors">Rangilo Raas</h3>
+                        <p class="text-gray-600 text-sm">Traditional dance performance celebrating cultural heritage.</p>
                     </div>
                 </div>
 
                 <!-- Video 4: Rhapsody -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                <div class="bg-white group cursor-pointer">
+                    <div class="relative aspect-video overflow-hidden">
+                        <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
                             <source src="Videos/rhapsody.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
                         </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M8 5v10l8-5z"/>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Performance
-                            </div>
-                            <span class="text-xs text-gray-500">Drama Team</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Rhapsody
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            Experience the artistic brilliance of our drama team.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
-                    </div>
-                </div>
-
-                <!-- Video 5: Yearbook 1 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
-                            <source src="Videos/yearbook-1.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
-                        </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M8 5v10l8-5z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Series
-                            </div>
-                            <span class="text-xs text-gray-500">Yearbook Project</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Yearbook 1
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            First episode of the Yearbook Project series.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
-                    </div>
-                </div>
-
-                <!-- Video 6: Yearbook 2 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
-                            <source src="Videos/yearbook-2.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
-                        </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M8 5v10l8-5z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-green-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Series
-                            </div>
-                            <span class="text-xs text-gray-500">Yearbook Project</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Yearbook 2
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            Second episode of The Yearbook Project series.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
-                    </div>
-                </div>
-
-                <!-- Video 7: Yearbook 3 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
-                            <source src="Videos/yearbook-3.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
-                        </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M8 5v10l8-5z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-purple-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Series
-                            </div>
-                            <span class="text-xs text-gray-500">Yearbook Project</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Yearbook 3
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            Third episode of The Yearbook Project series.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
-                    </div>
-                </div>
-
-                <!-- Video 8: Yearbook 4 -->
-                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="relative bg-black">
-                        <video class="w-full h-40 object-cover featured-video" autoplay muted loop playsinline preload="auto">
-                            <source src="Videos/yearbook-4.mp4" type="video/mp4">
-                            <p class="text-white p-3">Your browser does not support the video tag.</p>
-                        </video>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center cursor-pointer video-overlay">
-                            <div class="bg-white bg-opacity-90 rounded-full p-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M8 5v10l8-5z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <div class="flex items-center mb-1">
-                            <div class="bg-blue-600 text-white px-2 py-0.5 rounded text-xs font-semibold mr-2">
-                                Series
-                            </div>
-                            <span class="text-xs text-gray-500">Yearbook Project</span>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-900 mb-1">
-                            Yearbook 4
-                        </h3>
-                        <p class="text-gray-600 text-xs leading-relaxed">
-                            Fourth episode of The Yearbook Project series.
-                        </p>
-                        <p class="text-red-600 text-xs mt-2 font-medium">For full video watch on YouTube</p>
+                    <div class="p-4">
+                        <p class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Performance</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#9d2235] transition-colors">Rhapsody</h3>
+                        <p class="text-gray-600 text-sm">Experience the artistic brilliance of our drama team.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Compact Call to Action -->
-            <div class="text-center mt-6">
-                <div class="bg-[#9d2235] rounded-lg p-4 text-white max-w-lg mx-auto">
-                    <h3 class="text-base font-bold mb-2">Share Your Story</h3>
-                    <p class="mb-3 opacity-90 text-xs">
-                        Have compelling content to feature? Submit your stories and performances.
-                    </p>
-                    <a href="mailto:voices@somaiya.edu" 
-                       class="bg-white text-[#9d2235] px-3 py-1.5 rounded font-semibold hover:bg-gray-100 transition-colors inline-flex items-center text-xs">
-                        <i data-lucide="video" class="w-3 h-3 mr-1"></i>
-                        Submit Content
-                    </a>
+            <!-- Yearbook Series -->
+            <div class="mt-12">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">The Yearbook Project Series</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Yearbook 1-4 -->
+                    <div class="bg-white group cursor-pointer">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                                <source src="Videos/yearbook-1.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 5v10l8-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">Episode 1</p>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#9d2235] transition-colors">Yearbook 1</h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-white group cursor-pointer">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                                <source src="Videos/yearbook-2.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 5v10l8-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">Episode 2</p>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#9d2235] transition-colors">Yearbook 2</h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-white group cursor-pointer">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                                <source src="Videos/yearbook-3.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 5v10l8-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">Episode 3</p>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#9d2235] transition-colors">Yearbook 3</h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-white group cursor-pointer">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover featured-video" autoplay muted loop playsinline preload="auto">
+                                <source src="Videos/yearbook-4.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <svg class="w-8 h-8 text-[#9d2235] ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 5v10l8-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Episode 4</p>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#9d2235] transition-colors">Yearbook 4</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Student & Campus Network Section -->
-    <section id="media-sponsor" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-2">Student & Campus Network</h2>
-            <p class="text-gray-500 mb-12">Official student-led media body</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-80">
-                <div class="p-6 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar" class="h-20 w-32 object-contain mx-auto rounded">
-                    <p class="mt-2 font-semibold">Somaiya Vidyavihar</p>
-                </div>
-                <div class="p-6 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://www.somaiya-kalavidya.org/assets/kalavidya/images/about/kalavidyalogo.jpg" alt="Somaiya Kalavidya" class="h-20 w-32 object-contain mx-auto rounded">
-                    <p class="mt-2 font-semibold">Somaiya Kalavidya</p>
-                </div>
-                <div class="p-6 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNLKCL746HCe8Xk5dlwbV3wsPoYQ64OmaTyw&s" alt="Somaiya Ayurvihar" class="h-20 w-32 object-contain mx-auto rounded">
-                    <p class="mt-2 font-semibold">Somaiya Ayurvihar</p>
-                </div>
-                <div class="p-6 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGBq0X5CeWctF8zP7-blsMmowjttrH20s2cQ&s" alt="Somaiya Vidyavihar University" class="h-20 w-32 object-contain mx-auto rounded">
-                    <p class="mt-2 font-semibold">Somaiya Vidyavihar University</p>
-                </div>
-                <div class="p-6 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHig1vWF_DnV0OAWgtskxDTJoCw2098b-7jQ&s" alt="Somaiya Trust" class="h-20 w-32 object-contain mx-auto rounded">
-                    <p class="mt-2 font-semibold">Somaiya Trust</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet Our Team Section -->
-    <section id="meet-team" class="py-20" style="background-image: url('website background 2.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container mx-auto px-4">
+    <!-- Student & Campus Network Section - Gates Foundation Style -->
+    <section id="media-sponsor" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <div class="inline-block p-6 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-                    <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">Dedicated individuals working together to amplify student voices across Somaiya Vidyavihar</p>
-                    <div class="w-24 h-1 somaiya-bg mx-auto"></div>
-                </div>
+                <p class="section-header">Our Network</p>
+                <h2 class="section-title">Student & Campus Network</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Official student-led media body connecting the Somaiya community.</p>
             </div>
-
-            <!-- Horizontal Team Scroll -->
-            <div class="relative">
-                <!-- Navigation Buttons -->
-                <button class="nav-button left hidden md:block" id="scrollLeft" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 20; font-size: 24px; font-weight: bold; box-shadow: 0 4px 20px rgba(157, 34, 53, 0.3);">‹</button>
-                <button class="nav-button right hidden md:block" id="scrollRight" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 20; font-size: 24px; font-weight: bold; box-shadow: 0 4px 20px rgba(157, 34, 53, 0.3);">›</button>
-                
-                <!-- Mobile Navigation Buttons -->
-                <div class="flex md:hidden justify-center gap-4 mb-4">
-                    <button class="nav-button-mobile" id="scrollLeftMobile" style="background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; font-weight: bold; box-shadow: 0 2px 10px rgba(157, 34, 53, 0.3);">‹</button>
-                    <button class="nav-button-mobile" id="scrollRightMobile" style="background: rgba(157, 34, 53, 0.9); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; font-weight: bold; box-shadow: 0 2px 10px rgba(157, 34, 53, 0.3);">›</button>
-                </div>
-                
-                <div class="overflow-hidden" style="margin: 0 md:70px;">
-                    <div class="flex gap-4 md:gap-6 transition-transform duration-500 ease-in-out" id="teamScroll" style="width: max-content; padding: 0 10px md:padding: 0;"">>
-                        <!-- All Team Cards - Same Size -->
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;" data-member="AK">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Aaysha Khan</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CHIEF</p>
-                                <p class="text-xs text-gray-600">KJSSC</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;" data-member="PG">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Priyansh Gupta</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CO-CHIEF & SOCIAL MEDIA HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;" data-member="SC">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Shlok Chauhan</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT & PR HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Nirek.jpeg.png" alt="Nirek Ganguly" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-sm md:text-lg font-bold text-gray-900 mb-1">Nirek Ganguly</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Ishika_.jpg" alt="Ishika Jain" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Ishika Jain</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">GRAPHICS HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Kaustub.jpg" alt="Kaustubh Rewankar" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Kaustubh Rewankar</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Sweekriti.jpg" alt="Sweekriti Maheshwari" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Sweekriti Maheshwari</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT SUB-HEAD</p>
-                                <p class="text-xs text-gray-600">KJSSE</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Rutwa.jpg" alt="Rutwa Nimkar" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Rutwa Nimkar</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PR SUB-HEAD</p>
-                                <p class="text-xs text-gray-600">SSSMS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Megh.jpg" alt="Megh Bame" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Megh Bame</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA SUB-HEAD</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Aiza.jpg" alt="Aiza Mistry" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Aiza Mistry</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Christina.jpg" alt="Christina Dcunha" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Christina Dcunha</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
-                                <p class="text-xs text-gray-600">KJSAC</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Prachi.jpg" alt="Prachi Mishra" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Prachi Mishra</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Viplav.jpg" alt="Viplav Bhanarkar" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Viplav Bhanarkar</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Viraj_.jpg" alt="Viraj Ravani" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Viraj Ravani</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT MEMBER</p>
-                                <p class="text-xs text-gray-600">KJSP</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Gunjan.jpg" alt="Gunjan Israni" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Gunjan Israni</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS MEMBER</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Nitin.jpg" alt="Nitin Choudhary" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Nitin Choudhary</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS MEMBER</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Vidisha.jpg" alt="Vidisha Tayade" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Vidisha Tayade</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Vaishnavi.jpg" alt="Vaishnavi Dhotre" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Vaishnavi Dhotre</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Shravani.jpg" alt="Shravani Mohide" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Shravani Mohide</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS CREW</p>
-                                <p class="text-xs text-gray-600">KJSCE</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Dhruvi.jpg" alt="Dhruvi Patel" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Dhruvi Patel</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">CONTENT CREW</p>
-                                <p class="text-xs text-gray-600">SSD</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/ID template  (80 x 130 mm)_20251126_173043_0000.jpg" alt="Khushi Brahmbhatt" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Khushi Brahmbhatt</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">GRAPHICS CREW</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Afifa.jpg" alt="Afifa Waghu" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Afifa Waghu</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Deven.jpg" alt="Deven Patel" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Deven Patel</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
-                                <p class="text-xs text-gray-600">SK SOMAIYA</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Krit ID.jpg" alt="Krit Shah" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Krit Shah</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
-                                <p class="text-xs text-gray-600">KJSAC</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Lakshita.jpg" alt="Lakshita Tiwari" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Lakshita Tiwari</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PHOTO & VIDEO CREW</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Mahek.jpg" alt="Mahek Agnihotri" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Mahek Agnihotri</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Diksha.jpg" alt="Diksha More" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Diksha More</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Meher.jpg" alt="Meher Shah" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Meher Shah</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
-                                <p class="text-xs text-gray-600">SSHSS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Siddhi.jpg" alt="Siddhi Kamble" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Siddhi Kamble</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">SOCIAL MEDIA CREW</p>
-                                <p class="text-xs text-gray-600">SSBAS</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Sachi.jpg" alt="Saachi Chunekar" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Saachi Chunekar</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">PR CREW</p>
-                                <p class="text-xs text-gray-600">SKSCAC</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Tanisha.jpg" alt="Tanisha Bhagat" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Tanisha Bhagat</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS CREW</p>
-                                <p class="text-xs text-gray-600">KJSAC</p>
-                            </div>
-                        </div>
-
-                        <div class="team-card bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer" style="min-width: 180px; max-width: 180px; width: 180px;">
-                            <div class="h-40 md:h-48 overflow-hidden bg-white flex items-center justify-center">
-                                <img src="Team Pics Converted/Laxman.jpg" alt="Laxman Choudhary" class="w-full h-full object-contain">
-                            </div>
-                            <div class="p-3 md:p-4 text-center">
-                                <h4 class="text-lg font-bold text-gray-900 mb-1">Laxman Choudhary</h4>
-                                <p class="text-xs font-semibold text-[#9d2235] mb-1">OPERATIONS CREW</p>
-                                <p class="text-xs text-gray-600">KJSSC</p>
-                            </div>
-                        </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-[#f7f7f7] p-8 mb-4 transition-all duration-300 group-hover:bg-[#9d2235]">
+                        <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
                     </div>
+                    <p class="font-semibold text-gray-900">Somaiya Vidyavihar</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-[#f7f7f7] p-8 mb-4 transition-all duration-300 group-hover:bg-[#9d2235]">
+                        <img src="https://www.somaiya-kalavidya.org/assets/kalavidya/images/about/kalavidyalogo.jpg" alt="Somaiya Kalavidya" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">Somaiya Kalavidya</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-[#f7f7f7] p-8 mb-4 transition-all duration-300 group-hover:bg-[#9d2235]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNLKCL746HCe8Xk5dlwbV3wsPoYQ64OmaTyw&s" alt="Somaiya Ayurvihar" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">Somaiya Ayurvihar</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-[#f7f7f7] p-8 mb-4 transition-all duration-300 group-hover:bg-[#9d2235]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGBq0X5CeWctF8zP7-blsMmowjttrH20s2cQ&s" alt="Somaiya Vidyavihar University" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">SVU</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-[#f7f7f7] p-8 mb-4 transition-all duration-300 group-hover:bg-[#9d2235]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHig1vWF_DnV0OAWgtskxDTJoCw2098b-7jQ&s" alt="Somaiya Trust" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">Somaiya Trust</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Archives Section -->
-    <section id="newsletter-archives" class="py-8" style="background-image: url('website background 4.jpeg'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-6">
-                <div class="inline-block p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Newsletter Archives</h2>
-                    <p class="text-sm text-gray-600 mb-4 max-w-2xl mx-auto">The campus newspaper focusing on student voices and community stories from Somaiya Vidyavihar.</p>
-                    <div class="w-16 h-1 somaiya-bg mx-auto"></div>
-                </div>
-            </div>
-
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-gray-50 rounded-lg p-6 border-2 border-dashed border-gray-300 hover:border-[#9d2235] transition-all duration-300 text-center">
-                    <div class="mb-4">
-                        <i data-lucide="external-link" class="w-10 h-10 text-[#9d2235] mx-auto mb-3"></i>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Explore Our Newsletter Collection</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Browse newsletters featuring student stories, campus events, and community insights.
-                        </p>
-                    </div>
-                    
-                    <a href="https://www.somaiya.edu/en/view-newsletters/1/" target="_blank" rel="noopener noreferrer" 
-                       class="inline-flex items-center px-5 py-2.5 bg-[#9d2235] text-white text-sm font-semibold rounded-lg hover:bg-[#7a1b29] transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        <span>View All Newsletters</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                    
-                    <p class="text-xs text-gray-500 mt-3">
-                        Opens in a new tab • Somaiya Official Newsletter Portal
-                    </p>
-                </div>
-
-                <!-- Compact Feature Highlights -->
-                <div class="grid grid-cols-3 gap-3 mt-6">
-                    <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
-                        <i data-lucide="users" class="w-5 h-5 text-[#9d2235] mx-auto mb-2"></i>
-                        <h4 class="font-bold text-gray-900 mb-1 text-xs">Student Stories</h4>
-                        <p class="text-xs text-gray-600">Inspiring student journeys</p>
-                    </div>
-                    
-                    <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
-                        <i data-lucide="calendar" class="w-5 h-5 text-[#9d2235] mx-auto mb-2"></i>
-                        <h4 class="font-bold text-gray-900 mb-1 text-xs">Campus Events</h4>
-                        <p class="text-xs text-gray-600">Latest campus activities</p>
-                    </div>
-                    
-                    <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
-                        <i data-lucide="trophy" class="w-5 h-5 text-[#9d2235] mx-auto mb-2"></i>
-                        <h4 class="font-bold text-gray-900 mb-1 text-xs">Achievements</h4>
-                        <p class="text-xs text-gray-600">Community milestones</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Media & Contact Section -->
-    <section id="connect" class="py-8" style="background-image: url('website background 3.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container mx-auto px-4">
-            <!-- Section Header -->
-            <div class="text-center mb-8">
-                <div class="inline-block p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 flex items-center justify-center gap-3">
-                        Connect With <img src="Voices logo black.png" alt="Voices" class="h-6 md:h-7 ml-1">
-                    </h2>
-                    <p class="text-gray-600 max-w-xl mx-auto">
-                        Stay connected with us across all platforms and be part of our vibrant community
-                    </p>
-                </div>
-            </div>
-
-            <!-- Contact & Social Media Grid -->
-            <div class="grid lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                
-                <!-- Contact Information -->
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-[#9d2235] rounded-full flex items-center justify-center mr-3">
-                            <i data-lucide="mail" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">Get in Touch</h3>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <div class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <i data-lucide="mail" class="w-4 h-4 text-[#9d2235] mr-3 flex-shrink-0"></i>
-                            <div>
-                                <p class="text-xs text-gray-600 font-medium">Email Us</p>
-                                <a href="mailto:voices@somaiya.edu" class="text-[#9d2235] font-semibold hover:underline text-sm">
-                                    voices@somaiya.edu
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <i data-lucide="message-circle" class="w-4 h-4 text-[#9d2235] mr-3 flex-shrink-0"></i>
-                            <div>
-                                <p class="text-xs text-gray-600 font-medium">WhatsApp Community</p>
-                                <a href="https://chat.whatsapp.com/HvRbCrwHGojFdDf3zTYIiR?mode=ems_copy_t" target="_blank" class="text-[#9d2235] font-semibold hover:underline text-sm">
-                                    Join Our Community
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Follow Us -->
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-[#9d2235] rounded-full flex items-center justify-center mr-3">
-                            <i data-lucide="share-2" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">Follow Us</h3>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/somaiyavoices" target="_blank" 
-                           class="flex items-center p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
-                            <i data-lucide="instagram" class="w-5 h-5 mr-3 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-sm">Instagram</p>
-                                <p class="text-xs opacity-90">@somaiyavoices</p>
-                            </div>
-                        </a>
-                        
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/somaiya-voices" target="_blank" 
-                           class="flex items-center p-3 bg-blue-600 rounded-lg text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
-                            <i data-lucide="linkedin" class="w-5 h-5 mr-3 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-sm">LinkedIn</p>
-                                <p class="text-xs opacity-90">Somaiya Voices</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Watch & Tweet -->
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-[#9d2235] rounded-full flex items-center justify-center mr-3">
-                            <i data-lucide="video" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">Watch & Tweet</h3>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <!-- YouTube -->
-                        <a href="https://youtube.com/@somaiyavoices?si=XjXlGAWfE-KoGU-M" target="_blank" 
-                           class="flex items-center p-3 bg-red-500 rounded-lg text-white hover:bg-red-600 transition-all duration-300 transform hover:scale-105">
-                            <i data-lucide="youtube" class="w-5 h-5 mr-3 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-sm">YouTube</p>
-                                <p class="text-xs opacity-90">@somaiyavoices</p>
-                            </div>
-                        </a>
-                        
-                        <!-- Twitter/X -->
-                        <a href="https://x.com/somaiya_voices" target="_blank" 
-                           class="flex items-center p-3 bg-black rounded-lg text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
-                            <i data-lucide="twitter" class="w-5 h-5 mr-3 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-sm">Twitter / X</p>
-                                <p class="text-xs opacity-90">@somaiya_voices</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="text-center mt-8">
-                <div class="bg-[#9d2235] rounded-xl p-6 text-white max-w-3xl mx-auto">
-                    <h3 class="text-xl font-bold mb-3">Be Part of Our Story</h3>
-                    <p class="mb-5 opacity-90">
-                        Whether you're sharing your experiences, following our content, or joining our community conversations, 
-                        every connection helps us amplify the diverse voices of Somaiya Vidyavihar.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-3">
-                        <a href="mailto:voices@somaiya.edu" 
-                           class="bg-white text-[#9d2235] px-5 py-2.5 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                            Send Us a Story
-                        </a>
-                        <a href="https://chat.whatsapp.com/HvRbCrwHGojFdDf3zTYIiR?mode=ems_copy_t" target="_blank"
-                           class="border-2 border-white text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-white hover:text-[#9d2235] transition-colors">
-                            Join WhatsApp Community
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer - Black Background with Both Logos -->
-    <footer class="bg-black text-white pt-10 pb-6">
-        <div class="container mx-auto px-4">
-            <!-- Footer Navigation (Horizontal layout with logos) -->
-            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8 mb-6">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center gap-6">
+    <!-- Footer - Gates Foundation Style -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Footer Navigation -->
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-800 pb-12 mb-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center gap-8">
                         <!-- Voices Logo -->
                         <a href="#home" class="cursor-pointer">
-                            <img src="voices Logo.png" alt="Voices Logo" class="h-12 w-auto">
+                            <img src="voices Logo.png" alt="Voices Logo" class="h-14 w-auto">
                         </a>
                         <!-- Somaiya Vidyavihar Logo -->
-                        <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar Logo" class="h-12 w-auto">
+                        <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar Logo" class="h-14 w-auto">
                     </div>
                 </div>
                 
-                <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-sm font-semibold text-gray-300">
-                    <a href="#who-we-are" class="hover:text-white transition">About Us</a>
-                    <a href="#deans-office" class="hover:text-white transition">Dean's Office</a>
-                    <a href="#media-sponsor" class="hover:text-white transition">Student & Campus Network</a>
-                    <a href="#meet-team" class="hover:text-white transition">Team</a>
-                    <a href="#connect" class="hover:text-white transition">Connect</a>
-                    <a href="mailto:voices@somaiya.edu" class="hover:text-white transition">Contact Us</a>
-                </div>
+                <nav class="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-400">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="videos.html" class="hover:text-white transition-colors">Videos</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                    <a href="connect.html" class="hover:text-white transition-colors">Connect</a>
+                </nav>
             </div>
 
             <!-- Copyright Line -->
-            <div class="text-center text-xs md:text-sm text-gray-400">
+            <div class="text-center text-sm text-gray-500">
                 <p>&copy; 2025 Somaiya Vidyavihar University. All Rights Reserved.</p>
             </div>
         </div>

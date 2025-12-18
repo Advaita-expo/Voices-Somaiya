@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Somaiya Voices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --somaiya-red: #9d2235;
+            --somaiya-red-dark: #7a1b29;
+            --light-gray: #f7f7f7;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .section-header {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--somaiya-red);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        
+        .section-title-white {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title, .section-title-white {
+                font-size: 2rem;
+            }
+        }
+        
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--somaiya-red);
+            font-weight: 600;
+            transition: gap 0.3s ease;
+        }
+        
+        .link-arrow:hover {
+            gap: 1rem;
+        }
+        
+        .link-arrow-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffffff;
+            font-weight: 600;
+            transition: gap 0.3s ease;
+        }
+        
+        .link-arrow-white:hover {
+            gap: 1rem;
+        }
+        
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 768px) {
+            .quote-text {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Hero background animation */
+        @keyframes panLeftToRight {
+            0% {
+                transform: scale(1.2) translateX(-10%);
+            }
+            100% {
+                transform: scale(1.2) translateX(10%);
+            }
+        }
+        
+        .hero-bg-animate {
+            animation: panLeftToRight 20s ease-in-out infinite alternate;
+        }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex items-center gap-4">
+                    <img src="Voices logo black.png" alt="Voices Logo" class="h-10">
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Home</a>
+                    <a href="about.html" class="text-[#9d2235] font-semibold">About</a>
+                    <a href="videos.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Videos</a>
+                    <a href="team.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Team</a>
+                    <a href="newsletter.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Newsletter</a>
+                    <a href="connect.html" class="text-gray-600 hover:text-[#9d2235] transition-colors">Connect</a>
+                </div>
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-600 hover:text-[#9d2235]">Home</a>
+                <a href="about.html" class="block text-[#9d2235] font-semibold">About</a>
+                <a href="videos.html" class="block text-gray-600 hover:text-[#9d2235]">Videos</a>
+                <a href="team.html" class="block text-gray-600 hover:text-[#9d2235]">Team</a>
+                <a href="newsletter.html" class="block text-gray-600 hover:text-[#9d2235]">Newsletter</a>
+                <a href="connect.html" class="block text-gray-600 hover:text-[#9d2235]">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Full Width Image with Text Overlay -->
+    <section class="relative h-[70vh] min-h-[500px] overflow-hidden">
+        <div class="absolute inset-0 bg-[#9d2235]">
+            <img src="website background 2.jpg" alt="Somaiya Campus" class="w-full h-full object-cover opacity-40 hero-bg-animate">
+        </div>
+        <div class="absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 w-full">
+                <p class="text-white/80 text-sm font-bold uppercase tracking-wider mb-4">Our Journey</p>
+                <h1 class="section-title-white max-w-3xl mb-6">History of Somaiya Voices</h1>
+                <p class="text-xl text-white/90 max-w-2xl">The student-led media body created for the students, from the students, and by the students.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="section-header">Our Mission</p>
+                    <h2 class="section-title mb-8">Capturing the heartbeat of our campus</h2>
+                </div>
+                <div>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        <span class="font-bold text-gray-900">Voices</span> exists to capture the <span class="font-semibold text-[#9d2235]">heartbeat of our campus</span> and everything that makes Somaiya feel alive.
+                    </p>
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        We document the <span class="font-semibold">moments we celebrate, the stories that quietly unfold in the background</span>, and the experiences that shape us in ways we often realise only much later.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <svg class="w-16 h-16 text-[#9d2235] mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+            </div>
+            <p class="quote-text text-gray-900 mb-8">
+                Somaiya is not just an educational institution. It is a family made up of countless voices, each one carrying its own dreams, struggles, triumphs and stories.
+            </p>
+            <p class="text-xl text-[#9d2235] font-semibold">
+                And just like every family has a story to tell, this is ours.
+            </p>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="section-header">Our Foundation</p>
+                <h2 class="section-title">Built on three pillars</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8">
+                    <div class="w-20 h-20 bg-[#9d2235] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="lightbulb" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Creativity</h3>
+                    <p class="text-gray-600 text-lg">
+                        We believe in the power of creative expression to tell stories that resonate and inspire our community.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8">
+                    <div class="w-20 h-20 bg-[#9d2235] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="link" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Connection</h3>
+                    <p class="text-gray-600 text-lg">
+                        We bridge gaps between students, departments, and communities to create a unified Somaiya experience.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8">
+                    <div class="w-20 h-20 bg-[#9d2235] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Community</h3>
+                    <p class="text-gray-600 text-lg">
+                        We foster a space where every student finds room to express, to be seen and to be heard.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-24 bg-[#9d2235]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <p class="text-white/80 text-sm font-bold uppercase tracking-wider mb-4">What We Do</p>
+                    <h2 class="section-title-white mb-8">More than a media team</h2>
+                    <p class="text-xl text-white/90 leading-relaxed mb-8">
+                        Voices is a space where every student finds room to express, to be seen and to be heard. It is a platform that brings together different perspectives, emotions and journeys to create a shared tapestry of memories.
+                    </p>
+                    <a href="team.html" class="link-arrow-white text-lg">
+                        Meet our team
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white/10 p-8 backdrop-blur-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="video" class="w-6 h-6 text-[#9d2235]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Video Production</h4>
+                                <p class="text-white/80">Documenting campus life, events, and student stories through compelling visual narratives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/10 p-8 backdrop-blur-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="newspaper" class="w-6 h-6 text-[#9d2235]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Newsletter & Content</h4>
+                                <p class="text-white/80">Publishing stories, articles, and updates that keep the community informed and engaged.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/10 p-8 backdrop-blur-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="share-2" class="w-6 h-6 text-[#9d2235]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Social Media</h4>
+                                <p class="text-white/80">Connecting with students across platforms and amplifying voices throughout the campus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/10 p-8 backdrop-blur-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="calendar" class="w-6 h-6 text-[#9d2235]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Event Coverage</h4>
+                                <p class="text-white/80">Capturing the energy and spirit of campus events, fests, and celebrations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <p class="text-5xl md:text-6xl font-bold text-[#9d2235] mb-2">30+</p>
+                    <p class="text-gray-600 font-medium">Team Members</p>
+                </div>
+                <div>
+                    <p class="text-5xl md:text-6xl font-bold text-[#9d2235] mb-2">15+</p>
+                    <p class="text-gray-600 font-medium">Institutions Covered</p>
+                </div>
+                <div>
+                    <p class="text-5xl md:text-6xl font-bold text-[#9d2235] mb-2">3K+</p>
+                    <p class="text-gray-600 font-medium">Instagram Followers</p>
+                </div>
+                <div>
+                    <p class="text-5xl md:text-6xl font-bold text-[#9d2235] mb-2">100+</p>
+                    <p class="text-gray-600 font-medium">Stories Shared</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Network Section -->
+    <section class="py-24 bg-[#f7f7f7]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="section-header">Our Network</p>
+                <h2 class="section-title">Part of the Somaiya Family</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">Official student-led media body connecting institutions across Somaiya Vidyavihar.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-white p-8 mb-4 transition-all duration-300 group-hover:shadow-lg">
+                        <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">Somaiya Vidyavihar</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-white p-8 mb-4 transition-all duration-300 group-hover:shadow-lg">
+                        <img src="https://www.somaiya-kalavidya.org/assets/kalavidya/images/about/kalavidyalogo.jpg" alt="Somaiya Kalavidya" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">Somaiya Kalavidya</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-white p-8 mb-4 transition-all duration-300 group-hover:shadow-lg">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNLKCL746HCe8Xk5dlwbV3wsPoYQ64OmaTyw&s" alt="Somaiya Ayurvihar" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">Somaiya Ayurvihar</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-white p-8 mb-4 transition-all duration-300 group-hover:shadow-lg">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGBq0X5CeWctF8zP7-blsMmowjttrH20s2cQ&s" alt="Somaiya Vidyavihar University" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">SVU</p>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="bg-white p-8 mb-4 transition-all duration-300 group-hover:shadow-lg">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHig1vWF_DnV0OAWgtskxDTJoCw2098b-7jQ&s" alt="Somaiya Trust" class="h-16 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="font-semibold text-gray-900">Somaiya Trust</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-[#9d2235]">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Share Your Story?</h2>
+            <p class="text-xl opacity-90 mb-8">
+                Every voice matters. Whether you have a story to tell or want to join our team, we'd love to hear from you.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="connect.html" class="inline-flex items-center justify-center bg-white text-[#9d2235] px-8 py-4 font-semibold hover:bg-gray-100 transition-colors">
+                    Get in Touch
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                <a href="team.html" class="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-[#9d2235] transition-colors">
+                    Meet the Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-800 pb-12 mb-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center gap-8">
+                        <a href="index.html">
+                            <img src="voices Logo.png" alt="Voices Logo" class="h-14 w-auto">
+                        </a>
+                        <img src="Somaiya Vidyavihar logo.png" alt="Somaiya Vidyavihar Logo" class="h-14 w-auto">
+                    </div>
+                </div>
+                <nav class="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-400">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="videos.html" class="hover:text-white transition-colors">Videos</a>
+                    <a href="team.html" class="hover:text-white transition-colors">Team</a>
+                    <a href="newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                    <a href="connect.html" class="hover:text-white transition-colors">Connect</a>
+                </nav>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2025 Somaiya Vidyavihar University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
