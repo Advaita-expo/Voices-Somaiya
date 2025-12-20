@@ -767,6 +767,69 @@
             max-width: 100%;
             height: auto;
         }
+
+        /* Hero Video Mobile Responsiveness */
+        .hero-video-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        /* Mobile-specific video adjustments */
+        @media (max-width: 768px) {
+            .hero-video-container {
+                position: relative;
+                width: 100vw;
+                height: 60vw;
+                max-height: 70vh;
+                min-height: 220px;
+                overflow: hidden;
+            }
+            .hero-video {
+                object-fit: contain;
+                width: 100vw;
+                height: 100%;
+                min-width: unset;
+                min-height: unset;
+                object-position: center center;
+                background: #000;
+            }
+            #home {
+                height: auto;
+                min-height: 220px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-video-container {
+                height: 56vw;
+                min-height: 160px;
+                max-height: 60vh;
+            }
+            .hero-video {
+                object-fit: contain;
+                object-position: center center;
+                width: 100vw;
+                height: 100%;
+                background: #000;
+            }
+            #home {
+                height: auto;
+                min-height: 160px;
+            }
+        }
+
+        /* Ensure video plays on iOS/mobile devices */
+        .hero-video[playsinline] {
+            -webkit-playsinline: true;
+        }
         
         /* Professional team member card hover animation */
         .team-card {
@@ -819,8 +882,8 @@
                     <a href="newsletter.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
                         Newsletter
                     </a>
-                    <a href="campus-life.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
-                        Campus Life
+                    <a href="campus-event.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
+                        Campus Event
                     </a>
                     <a href="connect.html" class="text-sm font-bold text-gray-300 hover:text-white nav-link uppercase tracking-wide">
                         Connect
@@ -860,7 +923,7 @@
                 <a href="videos.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Videos</a>
                 <a href="team.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Team</a>
                 <a href="newsletter.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Newsletter</a>
-                <a href="campus-life.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Campus Life</a>
+                <a href="campus-event.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Campus Event</a>
                 <a href="connect.html" class="text-lg font-semibold text-gray-800 hover:text-[#9d2235]">Connect</a>
                 <div class="flex space-x-4 mt-4">
                     <a href="https://www.instagram.com/somaiyavoices" target="_blank" class="text-gray-500"><i data-lucide="instagram"></i></a>
@@ -873,12 +936,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative text-white h-screen">
-        <div class="absolute inset-0 overflow-hidden">
+        <div class="hero-video-container">
             <!-- Video Background -->
-            <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <video class="hero-video" autoplay muted loop playsinline webkit-playsinline>
                 <source src="Videos/rangilo-raas.mp4" type="video/mp4">
                 <!-- Fallback image if video doesn't load -->
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="University Campus" class="w-full h-full object-contain">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="University Campus" class="w-full h-full object-cover">
             </video>
         </div>
         <div class="relative container mx-auto px-4 text-center">
@@ -1322,7 +1385,7 @@
                     <a href="videos.html" class="hover:text-white transition-colors">Videos</a>
                     <a href="team.html" class="hover:text-white transition-colors">Team</a>
                     <a href="newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
-                    <a href="campus-life.html" class="hover:text-white transition-colors">Campus Life</a>
+                    <a href="campus-event.html" class="hover:text-white transition-colors">Campus Event</a>
                     <a href="connect.html" class="hover:text-white transition-colors">Connect</a>
                 </nav>
             </div>
@@ -1567,7 +1630,7 @@
                 name: 'Shlok Chauhan',
                 role: 'CONTENT & PR HEAD',
                 college: 'SSBAS',
-                description: 'Shlok heads the Content and PR department, crafting compelling narratives that capture the essence of campus life. His writing expertise and public relations skills ensure that Voices maintains strong relationships with students, faculty, and external partners.',
+                description: 'Shlok heads the Content and PR department, crafting compelling narratives that capture the essence of campus events. His writing expertise and public relations skills ensure that Voices maintains strong relationships with students, faculty, and external partners.',
                 bgColor: 'linear-gradient(135deg, #6b7280, #374151)'
             },
             'NG': {
@@ -1588,7 +1651,7 @@
                 name: 'Kaustubh Rewankar',
                 role: 'PHOTO & VIDEO HEAD',
                 college: 'SSBAS',
-                description: 'Kaustubh captures the dynamic energy of campus life through his photography and videography. His technical expertise and creative eye help document memorable moments and events, bringing visual stories to life.',
+                description: 'Kaustubh captures the dynamic energy of campus events through his photography and videography. His technical expertise and creative eye help document memorable moments and events, bringing visual stories to life.',
                 bgColor: 'linear-gradient(135deg, #6b7280, #374151)'
             },
             'SM': {
@@ -1707,7 +1770,7 @@
                 name: 'Deven Patel',
                 role: 'PHOTO & VIDEO CREW',
                 college: 'SK SOMAIYA',
-                description: 'Deven assists the photo and video team with capturing campus life and events. His technical interest and creative perspective help document the diverse activities happening across the Somaiya community.',
+                description: 'Deven assists the photo and video team with capturing campus events. His technical interest and creative perspective help document the diverse activities happening across the Somaiya community.',
                 bgColor: 'linear-gradient(135deg, #8b5cf6, #7c3aed)'
             },
             'KS': {
@@ -1756,7 +1819,7 @@
                 name: 'Lakshita Tiwari',
                 role: 'CONTENT TEAM',
                 college: 'SSHSS',
-                description: 'Lakshita contributes to the content team with her excellent writing skills and creative approach to storytelling. She helps develop engaging articles that resonate with students and captures the essence of campus life.',
+                description: 'Lakshita contributes to the content team with her excellent writing skills and creative approach to storytelling. She helps develop engaging articles that resonate with students and captures the essence of campus events.',
                 bgColor: 'linear-gradient(135deg, #8b5cf6, #7c3aed)'
             },
             'MS': {
@@ -1987,7 +2050,7 @@
                     {
                         number: 4,
                         title: "Issue 4",
-                        description: "Focuses on post-pandemic campus life, hybrid learning experiences, and community rebuilding efforts. Includes student resilience stories and academic adaptations.",
+                        description: "Focuses on post-pandemic campus events, hybrid learning experiences, and community rebuilding efforts. Includes student resilience stories and academic adaptations.",
                         month: "December",
                         downloadLink: "#"
                     },

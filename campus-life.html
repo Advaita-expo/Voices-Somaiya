@@ -93,6 +93,37 @@
         .hero-bg-animate {
             animation: panLeftToRight 20s ease-in-out infinite alternate;
         }
+
+        /* Filter styles */
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+            background: white;
+            color: #4a5568;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--somaiya-red);
+            color: var(--somaiya-red);
+        }
+
+        .filter-btn.active {
+            background: var(--somaiya-red);
+            border-color: var(--somaiya-red);
+            color: white;
+        }
+
+        .month-section {
+            transition: all 0.3s ease;
+        }
+
+        .month-section.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -145,181 +176,564 @@
         </div>
     </section>
 
-    <!-- Fests Section -->
+    <!-- Events Section - SVU -->
     <section class="py-24 bg-[#f7f7f7]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <p class="section-header">Annual Celebrations</p>
-                <h2 class="section-title">Campus Fests</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">From cultural extravaganzas to technical showcases, our fests bring the entire campus together in celebration.</p>
+                <p class="section-header">Somaiya Vidyavihar University (SVU)</p>
+                <h2 class="section-title">Campus Events</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Discover the diverse range of events, workshops, and celebrations happening across our campus.</p>
+            </div>
+
+            <!-- Month Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="svu-filter">
+                <button class="filter-btn active" data-month="all" data-section="svu">All Months</button>
+                <button class="filter-btn" data-month="august" data-section="svu">August</button>
+                <button class="filter-btn" data-month="september" data-section="svu">September</button>
+                <button class="filter-btn" data-month="october" data-section="svu">October</button>
+                <button class="filter-btn" data-month="november" data-section="svu">November</button>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Fest Cards -->
+            <!-- August Events -->
+            <div class="month-section" data-month="august" data-section="svu">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">August</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div class="fest-card">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Online Seminar on Indian Philosophy and Intercultural Dialogues</h3>
+                        <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                        <p class="text-gray-600 text-sm">KJ Somaiya Institute of Dharma Studies</p>
+                    </div>
                 <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">AURA</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
-                    <p class="text-gray-600 text-sm">SSBAS + SSHSS + SKSCBS</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">FY Orientation</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Engineering</p>
                 </div>
-                
                 <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">SYMPHONY</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
-                    <p class="text-gray-600 text-sm">K J Somaiya School of Engineering</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Somaiya x Squidgame</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
                 </div>
-                
                 <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">ABHIYANTIKI / ABHIYANTA</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Technical Fest</p>
-                    <p class="text-gray-600 text-sm">K J Somaiya School of Engineering</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Poster Competition: Quit India Movement</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Institute of Dharma Studies</p>
                 </div>
-                
                 <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">MÉLANGE</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
-                    <p class="text-gray-600 text-sm">K J Somaiya Institute of Management</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Library Crossroads: An Author Talk and Book Exhibition</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
                 </div>
-                
                 <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">SPECTRUM / DESIGN WEEK</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Design Fest</p>
-                    <p class="text-gray-600 text-sm">Somaiya School of Design</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Librarians Day 2025 - Workshop on Reinventing Library Management</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">Department of Library and Information Science</p>
                 </div>
-                
                 <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">HOONER</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
-                    <p class="text-gray-600 text-sm">K J Somaiya College of Arts & Commerce</p>
-                </div>
-                
-                <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">SURABHI</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
-                    <p class="text-gray-600 text-sm">K J Somaiya College of Science & Commerce</p>
-                </div>
-                
-                <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">ASMITA</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Cultural Fest</p>
-                    <p class="text-gray-600 text-sm">K J Somaiya College of Science & Commerce</p>
-                </div>
-                
-                <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">SOMAIYA YOUTH FESTIVAL</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">University Fest</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">79th Independence Day Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
                     <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
                 </div>
-                
                 <div class="fest-card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">SOMAIYA MUSIC FESTIVAL</h3>
-                    <p class="text-[#9d2235] text-sm font-semibold mb-2">Music Fest</p>
-                    <p class="text-gray-600 text-sm">Maya Somaiya School of Music & Performing Arts</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Session on Placement Opportunities for Curriculum Development</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Education</p>
                 </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Session on Art of Resume Making by Ms Usha Sharma</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Education</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Inauguration of Centre of Excellence in Analytical Pyrolysis</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">CoE-AnPy</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Anti Ragging Week</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">Somaiya Sports Academy</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">National Sports Day</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">Somaiya Sports Academy</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Freshers Eve 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Engineering</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Excel Made Easy: Practical Skills For Daily Office Tasks</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Somaiya Public Lecture By Dr. Surya Durbha</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- September Events -->
+            <div class="month-section" data-month="september" data-section="svu">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">September</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div class="fest-card">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Inauguration Of Saraswati Admin Block</h3>
+                        <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                        <p class="text-gray-600 text-sm">Saraswati Admin Block</p>
+                    </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">4th Convocation Ceremony</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">NEP 2020 Awareness Rally</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">NEP 2020</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Ashtavadhanakala (The Art of Ashtavadhanam)</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Institute of Dharma Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Sanskrit Day Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Institute of Dharma Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">KJSSE Internal Hackathon for SIH2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Engineering</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Calc-Crack</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Engineering</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Teachers Day 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Engineering</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Beyond The Classroom</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Engineering Alumni Cell</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Mental Health Awareness Session</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Workshop On Resume Building</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">INDAM Special 2025: Vibrant MSMEs</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Institute of Management</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Guest Lecture on Mastering English as Language</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Education</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Seedball Activity - World Conservation Day</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Orientation Session on Semester Exchange Program</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Public Lecture on BAAGH by Abhishek Ray</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+            </div>
+            </div>
+
+            <!-- October Events -->
+            <div class="month-section" data-month="october" data-section="svu">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">October</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">International Conference on New Dimensions in Chemical Sciences</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Raas Garba 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Session On Career Advancement Scheme (CAS)</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Exploring CFA as a Global Career Path</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Blood Donation Camp</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Somaiya Youth Festival 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">Somaiya Youth Festival</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Maai Maati - Film Festival</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">Somaiya Dhwani Chitram & Dept. of Mass Communication</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">The Accountable Avengers</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Raag-e-Roshni "A Symphony of Lights, Love and Laughter"</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Inauguration of CoE in Polyurethane Technology (CoE-PUTech)</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">CoE-PUTech</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Abhiyantriki Inauguration Ceremony 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Engineering</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Orientation on TAIT by Afreen M Hayat</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Education</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Launch of Meditation Methods Book by Thomas Gutmann</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Institute of Dharma Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Somaiya Alumni USA Reunion</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">Alumni Cell of KJ Somaiya College of Engineering</p>
+                </div>
+            </div>
+            </div>
+
+            <!-- November Events -->
+            <div class="month-section" data-month="november" data-section="svu">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">November</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">150 Years Of Vande Mataram Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">FinQuest - Navigating Careers in Finance</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya College of Commerce and Business Studies</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">International University Partner Week 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Scavenger Hunt for 84th Foundation Day</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Physiotherapy</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">84th Foundation Day</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">Somaiya Vidyavihar University</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Interactive Talks - LitFest</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">LitFest & Somaiya Storytelling Society</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Children's Day Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Institute of Management</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">AI-Driven Health Care Conference</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Nursing</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Workshop on Compassion in Action: Designing Leadership Projects</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya School of Education</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Seminar on Hamstring Training and Rehab Device</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Physiotherapy</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Somaiya Badminton Toss 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">Somaiya Sports Academy</p>
+                </div>
+            </div>
             </div>
         </div>
     </section>
 
-    <!-- Clubs Section -->
+    <!-- Events Section - SVV -->
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <p class="section-header">Student Organizations</p>
-                <h2 class="section-title">Campus Clubs</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Join a community of passionate individuals. Our clubs offer opportunities to learn, grow, and make lasting connections.</p>
+                <p class="section-header">Somaiya Vidyavihar (SVV)</p>
+                <h2 class="section-title">College Events</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Events and activities organized by various colleges and departments across Somaiya Vidyavihar.</p>
+            </div>
+
+            <!-- Month Filter for SVV -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="svv-filter">
+                <button class="filter-btn active" data-month="all" data-section="svv">All Months</button>
+                <button class="filter-btn" data-month="july" data-section="svv">July</button>
+                <button class="filter-btn" data-month="august" data-section="svv">August</button>
+                <button class="filter-btn" data-month="september" data-section="svv">September</button>
+                <button class="filter-btn" data-month="october" data-section="svv">October</button>
+                <button class="filter-btn" data-month="november" data-section="svv">November</button>
+                <button class="filter-btn" data-month="december" data-section="svv">December</button>
             </div>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                <!-- Club Cards -->
-                <div class="club-card">
-                    <span class="font-semibold">ACM</span>
+            <!-- July Events -->
+            <div class="month-section" data-month="july" data-section="svv">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">July</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Freshers Party</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">July</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Of Arts Science And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Somaiya Voices</span>
+            </div>
+            </div>
+
+            <!-- August Events -->
+            <div class="month-section" data-month="august" data-section="svv">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">August</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Talent Hunt 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Degree College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Dautyam</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Rakhi Selling Activity</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Union of Animals</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Blood Donation Camp 2.0</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">DataZen</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Ashram School Visit</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Rhapsody</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Tree Plantation Drive</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Illuminati</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Cultural Forum Inauguration Ceremony 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Arts And Commerce Junior College</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Parvaah</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Orientation 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Jr College</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Insignia</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Independence Day with Rangoli Competition</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Polytechnic</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Gyrations</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Cultural Forum Inauguration Ceremony 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Science And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Shutterbugs</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Alankar 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">August</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Science And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Octavium</span>
+            </div>
+            </div>
+
+            <!-- September Events -->
+            <div class="month-section" data-month="september" data-section="svv">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">September</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Teachers Day 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Degree College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Yugandhar</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Beach Cleanup Drive</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Palinoia</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">NSS Foundation Day</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Drushti</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Economics Association Inauguration 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">BloomBox</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Harmonic Heights 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Arts And Commerce Junior College</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">CodeCell</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Ganesh Chaturthi Celebration 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Jr College</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Emfinity</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Gujarati Diwas Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Jr College</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">MediaTheque</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Navratri Celebration 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Jr College</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Investor Forum</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Talent Hunt 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">Utkarsh Fest</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Debating Society</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Ice-Breaker 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Of Arts Science And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Storytelling Society</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Teachers Day - Sure Sangeet Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Of Arts Science And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">DSW Committee</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Teachers Day Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">September</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Polytechnic</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Glitterati</span>
+            </div>
+            </div>
+
+            <!-- October Events -->
+            <div class="month-section" data-month="october" data-section="svv">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">October</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Hooner Inauguration 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">October</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Degree College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Kaizan Club</span>
+            </div>
+            </div>
+
+            <!-- November Events -->
+            <div class="month-section" data-month="november" data-section="svv">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">November</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Hooner Mela</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Degree College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">Vision</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Children's Home Visit</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">AlumniCell</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Smart Investors Awareness Program by SEBI</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">SAHAS</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Research Methodology Workshop</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Arts And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">PUSH</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Lakshya Fest</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Arts Science And Commerce</p>
                 </div>
-                <div class="club-card">
-                    <span class="font-semibold">CSI</span>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">World Philosophy Day Celebration</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">SK Somaiya Arts Science And Commerce</p>
                 </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Aarambh 2025</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">November</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Science And Commerce</p>
+                </div>
+            </div>
+            </div>
+
+            <!-- December Events -->
+            <div class="month-section" data-month="december" data-section="svv">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 border-l-4 border-[#9d2235] pl-4">December</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Flashmob 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">December</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Degree College of Arts And Commerce</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Old Age Home Visit</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">December</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya College of Arts And Commerce</p>
+                </div>
+                <div class="fest-card">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Quantitative Methods In Empirical Research 2025-26</h3>
+                    <p class="text-[#9d2235] text-sm font-semibold mb-2">December</p>
+                    <p class="text-gray-600 text-sm">KJ Somaiya Arts And Commerce</p>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -376,6 +790,29 @@
         // Mobile menu toggle
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Month filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const month = this.dataset.month;
+                const section = this.dataset.section;
+                
+                // Update active button state
+                document.querySelectorAll(`.filter-btn[data-section="${section}"]`).forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Filter month sections
+                document.querySelectorAll(`.month-section[data-section="${section}"]`).forEach(sec => {
+                    if (month === 'all' || sec.dataset.month === month) {
+                        sec.classList.remove('hidden');
+                    } else {
+                        sec.classList.add('hidden');
+                    }
+                });
+            });
         });
     </script>
 </body>
