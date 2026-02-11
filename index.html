@@ -849,6 +849,34 @@
             transform: perspective(1000px) translateY(-8px) scale(1.01);
             transition: all 0.1s ease;
         }
+        
+        /* Card hover description overlay */
+        .card-hover-desc {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 60%);
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+            display: flex;
+            align-items: flex-end;
+            min-height: 4rem;
+            box-sizing: border-box;
+        }
+
+        /* Enabled cards will reveal overlay on hover or keyboard focus */
+        .group.card-hover-enabled:hover .card-hover-desc,
+        .group.card-hover-enabled:focus-within .card-hover-desc,
+        .group.card-hover-enabled:focus .card-hover-desc {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .card-hover-desc p { margin: 0; font-size: 0.9rem; line-height: 1.3; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen pt-24">
@@ -939,7 +967,7 @@
         <div class="hero-video-container">
             <!-- Video Background -->
             <video class="hero-video" autoplay muted loop playsinline webkit-playsinline>
-                <source src="Videos/rangilo-raas.mp4" type="video/mp4">
+                <source src="Somaiya Go Hyperlapse Video.mp4" type="video/mp4">
                 <!-- Fallback image if video doesn't load -->
                 <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="University Campus" class="w-full h-full object-cover">
             </video>
@@ -999,7 +1027,7 @@
                 <!-- Chancellor Card -->
                 <div class="bg-white">
                     <div class="aspect-[4/3] overflow-hidden">
-                        <img src="https://kjsim.somaiya.edu/assets_v3/kjsim/img/genesis/samir-sir.jpg" alt="Shri Samir Somaiya" class="w-full h-full object-cover">
+                        <img src="Team Pics Converted/Samir Somaiya 4.jpg" alt="Shri Samir Somaiya" class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-8">
                         <p class="text-xs font-bold text-[#9d2235] uppercase tracking-wider mb-2">Chancellor</p>
@@ -1008,11 +1036,11 @@
                         
                         <div class="quote-card mb-6">
                             <p class="text-gray-700 text-sm leading-relaxed relative z-10">
-                                "Education is not just about imparting knowledge; it is about nurturing minds, building character, and empowering individuals to become responsible citizens who contribute meaningfully to society. At Somaiya, we are committed to creating an environment where every student can discover their potential and pursue excellence."
+                                "Somaiya Vidyavihar works to provide education and opportunity to students, to make them great citizens of India and the World. In the words of Swami Vivekananda, 'We want that education by which character is formed, strength of mind is increased, the intellect expanded, and by which one can stand on one's own feet.'<br><br>Our dream, is to build a world class research and teaching institution, that is global in the reach of its ideas, and universal in its service. Welcome to our community."
                             </p>
                         </div>
                         
-                        <a href="#" class="link-arrow">
+                        <a href="https://president.somaiya.edu.in/en" target="_blank" rel="noopener noreferrer" class="link-arrow">
                             Learn more about our vision
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -1024,11 +1052,11 @@
                 <!-- Vice Chancellor Card -->
                 <div class="bg-white">
                     <div class="aspect-[4/3] overflow-hidden">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Presidentmu.jpg/500px-Presidentmu.jpg" alt="Vice Chancellor" class="w-full h-full object-cover">
+                        <img src="Team Pics Converted/246A1278 (1).JPG" alt="Prof. Ajay Kapoor" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <p class="text-xs font-bold text-[#9d2235] uppercase tracking-wider mb-2">Vice Chancellor</p>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Prof. Dr. V. N. Rajasekharan Pillai</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Prof. Ajay Kapoor</h3>
                         <p class="text-gray-500 text-sm mb-6">Vice Chancellor, Somaiya Vidyavihar University</p>
                         
                         <div class="quote-card mb-6">
@@ -1037,7 +1065,7 @@
                             </p>
                         </div>
                         
-                        <a href="#" class="link-arrow">
+                        <a href="https://vice-chancellor.somaiya.edu/en/about" target="_blank" rel="noopener noreferrer" class="link-arrow">
                             Read the Vice Chancellor's message
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -1392,7 +1420,7 @@
 
             <!-- Copyright Line -->
             <div class="text-center text-sm text-gray-500">
-                <p>&copy; 2025 Somaiya Vidyavihar University. All Rights Reserved.</p>
+                <p>&copy; 2025 Somaiya Vidyavihar. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
