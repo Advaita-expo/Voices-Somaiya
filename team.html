@@ -59,6 +59,49 @@
         .link-arrow:hover {
             gap: 1rem;
         }
+
+        .team-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .team-image-container {
+            width: 100%;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background: #f3f4f6;
+            margin-bottom: 1.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .team-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-card:hover .team-image-container img {
+            transform: scale(1.08);
+        }
+
+        .dept-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            background: #fef2f2;
+            color: #9d2235;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -110,297 +153,404 @@
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <!-- Leadership -->
-            <div class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Leadership</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
-                    <div class="text-center group team-card cursor-pointer" 
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 px-4 italic">Executive Core</h2>
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-12 max-w-6xl mx-auto items-start">
+                    <div class="team-card group cursor-pointer w-full sm:w-72 lg:w-80" 
                          data-name="Aaysha Khan" data-post="CHIEF" data-dept="CORE" data-institute="KJSSC" data-img="Team Pics Converted/Ayesha.jpg"
                          data-bio="As the Chief of Somaiya Voices, Aaysha leads the vision and strategy of the organization, ensuring that student stories are told with authenticity and impact across all platforms.">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Ayesha.jpg" alt="Aaysha Khan">
                         </div>
-                        <h4 class="font-bold text-gray-900">Aaysha Khan</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">CHIEF</p>
-                        <p class="text-xs text-gray-500">KJSSC</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">CORE TEAM</span>
+                            <h4 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Aaysha Khan</h4>
+                            <p class="text-sm font-semibold tracking-wider text-[#9d2235] mb-2 uppercase">CHIEF</p>
+                            <p class="text-xs text-gray-500 font-medium">KJSSC</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-72 lg:w-80"
                          data-name="Priyansh Gupta" data-post="CO-CHIEF & SOCIAL MEDIA HEAD" data-dept="CORE" data-institute="SSBAS" data-img="Team Pics Converted/Priyansh.jpg"
                          data-bio="Priyansh dual-hats as Co-Chief and Social Media Head, managing the digital presence of Voices while supporting the overall leadership and operational excellence of the team.">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Priyansh.jpg" alt="Priyansh Gupta">
                         </div>
-                        <h4 class="font-bold text-gray-900">Priyansh Gupta</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">CO-CHIEF & SOCIAL MEDIA HEAD</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">CORE TEAM</span>
+                            <h4 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Priyansh Gupta</h4>
+                            <p class="text-sm font-semibold tracking-wider text-[#9d2235] mb-2 uppercase">CO-CHIEF & SOCIAL MEDIA HEAD</p>
+                            <p class="text-xs text-gray-500 font-medium">SSBAS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                </div>
+            </div>
+
+            <!-- Heads -->
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 px-4 italic">Council Heads</h2>
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="team-card group cursor-pointer w-full sm:w-64 lg:w-72"
                          data-name="Shlok Chauhan" data-post="CONTENT & PR HEAD" data-dept="COUNCIL" data-institute="SSBAS" data-img="Team Pics Converted/Shlok.jpg">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Shlok.jpg" alt="Shlok Chauhan">
                         </div>
-                        <h4 class="font-bold text-gray-900">Shlok Chauhan</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">CONTENT & PR HEAD</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">COUNCIL</span>
+                            <h4 class="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Shlok Chauhan</h4>
+                            <p class="text-xs font-bold text-[#9d2235] mb-2 uppercase">CONTENT & PR HEAD</p>
+                            <p class="text-xs text-gray-500">SSBAS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-64 lg:w-72"
                          data-name="Nirek Ganguly" data-post="OPERATIONS HEAD" data-dept="COUNCIL" data-institute="SSBAS" data-img="Team Pics Converted/Nirek.jpeg.png">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Nirek.jpeg.png" alt="Nirek Ganguly" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Nirek.jpeg.png" alt="Nirek Ganguly">
                         </div>
-                        <h4 class="font-bold text-gray-900">Nirek Ganguly</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">OPERATIONS HEAD</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">COUNCIL</span>
+                            <h4 class="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Nirek Ganguly</h4>
+                            <p class="text-xs font-bold text-[#9d2235] mb-2 uppercase">OPERATIONS HEAD</p>
+                            <p class="text-xs text-gray-500">SSBAS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-64 lg:w-72"
                          data-name="Ishika Jain" data-post="GRAPHICS HEAD" data-dept="COUNCIL" data-institute="SSBAS" data-img="Team Pics Converted/Ishika_.jpg">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Ishika_.jpg" alt="Ishika Jain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Ishika_.jpg" alt="Ishika Jain">
                         </div>
-                        <h4 class="font-bold text-gray-900">Ishika Jain</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">GRAPHICS HEAD</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">COUNCIL</span>
+                            <h4 class="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Ishika Jain</h4>
+                            <p class="text-xs font-bold text-[#9d2235] mb-2 uppercase">GRAPHICS HEAD</p>
+                            <p class="text-xs text-gray-500">SSBAS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-64 lg:w-72"
                          data-name="Kaustubh Rewankar" data-post="PHOTO & VIDEO HEAD" data-dept="COUNCIL" data-institute="SSBAS" data-img="Team Pics Converted/Kaustub.jpg">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Kaustub.jpg" alt="Kaustubh Rewankar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Kaustub.jpg" alt="Kaustubh Rewankar">
                         </div>
-                        <h4 class="font-bold text-gray-900">Kaustubh Rewankar</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">PHOTO & VIDEO HEAD</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">COUNCIL</span>
+                            <h4 class="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Kaustubh Rewankar</h4>
+                            <p class="text-xs font-bold text-[#9d2235] mb-2 uppercase">PHOTO & VIDEO HEAD</p>
+                            <p class="text-xs text-gray-500">SSBAS</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Sub-Heads -->
-            <div class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Sub-Heads</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
-                    <div class="text-center group team-card cursor-pointer"
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 px-4 italic">Council Sub-Heads</h2>
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="team-card group cursor-pointer w-full sm:w-64 lg:w-72"
                          data-name="Sweekriti Maheshwari" data-post="CONTENT SUB-HEAD" data-dept="COUNCIL" data-institute="KJSSE" data-img="Team Pics Converted/Sweekriti.jpg">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Sweekriti.jpg" alt="Sweekriti Maheshwari" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Sweekriti.jpg" alt="Sweekriti Maheshwari">
                         </div>
-                        <h4 class="font-bold text-gray-900">Sweekriti Maheshwari</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">CONTENT SUB-HEAD</p>
-                        <p class="text-xs text-gray-500">KJSSE</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">CONTENT</span>
+                            <h4 class="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Sweekriti Maheshwari</h4>
+                            <p class="text-xs font-bold text-[#9d2235] mb-2 uppercase">CONTENT SUB-HEAD</p>
+                            <p class="text-xs text-gray-500">KJSSE</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-64 lg:w-72"
                          data-name="Rutwa Nimkar" data-post="PR SUB-HEAD" data-dept="COUNCIL" data-institute="KJSAC" data-img="Team Pics Converted/Rutwa.jpg">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Rutwa.jpg" alt="Rutwa Nimkar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Rutwa.jpg" alt="Rutwa Nimkar">
                         </div>
-                        <h4 class="font-bold text-gray-900">Rutwa Nimkar</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">PR SUB-HEAD</p>
-                        <p class="text-xs text-gray-500">KJSAC</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">PR & COMMUNICATIONS</span>
+                            <h4 class="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Rutwa Nimkar</h4>
+                            <p class="text-xs font-bold text-[#9d2235] mb-2 uppercase">PR SUB-HEAD</p>
+                            <p class="text-xs text-gray-500">KJSAC</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-64 lg:w-72"
                          data-name="Megh Bame" data-post="SOCIAL MEDIA SUB-HEAD" data-dept="COUNCIL" data-institute="SSBAS" data-img="Team Pics Converted/Megh.jpg">
-                        <div class="w-48 h-60 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Megh.jpg" alt="Megh Bame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Megh.jpg" alt="Megh Bame">
                         </div>
-                        <h4 class="font-bold text-gray-900">Megh Bame</h4>
-                        <p class="text-sm font-semibold text-[#9d2235]">SOCIAL MEDIA SUB-HEAD</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">SOCIAL MEDIA</span>
+                            <h4 class="font-serif text-xl font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Megh Bame</h4>
+                            <p class="text-xs font-bold text-[#9d2235] mb-2 uppercase">SOCIAL MEDIA SUB-HEAD</p>
+                            <p class="text-xs text-gray-500">SSBAS</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Members -->
-            <div class="mb-16">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Members</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
-                    <div class="text-center group team-card cursor-pointer"
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 px-4 italic">Department Members</h2>
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Aiza Mistry" data-post="CONTENT MEMBER" data-dept="CONTENT TEAM" data-institute="SSHSS" data-img="Team Pics Converted/Aiza.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Aiza.jpg" alt="Aiza Mistry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Aiza.jpg" alt="Aiza Mistry">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Aiza Mistry</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">CONTENT MEMBER</p>
-                        <p class="text-xs text-gray-500">SSHSS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">CONTENT</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Aiza Mistry</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">CONTENT MEMBER</p>
+                            <p class="text-[10px] text-gray-500">SSHSS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Prachi Mishra" data-post="PR MEMBER" data-dept="PR TEAM" data-institute="SSBAS" data-img="Team Pics Converted/Prachi.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Prachi.jpg" alt="Prachi Mishra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Prachi.jpg" alt="Prachi Mishra">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Prachi Mishra</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">PR MEMBER</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">PR TEAM</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Prachi Mishra</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">PR MEMBER</p>
+                            <p class="text-[10px] text-gray-500">SSBAS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Viplav Bhanarkar" data-post="GRAPHICS MEMBER" data-dept="GRAPHICS TEAM" data-institute="SSHSS" data-img="Team Pics Converted/Viplav.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Viplav.jpg" alt="Viplav Bhanarkar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Viplav.jpg" alt="Viplav Bhanarkar">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Viplav Bhanarkar</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">GRAPHICS MEMBER</p>
-                        <p class="text-xs text-gray-500">SSHSS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">GRAPHICS</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Viplav Bhanarkar</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">GRAPHICS MEMBER</p>
+                            <p class="text-[10px] text-gray-500">SSHSS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Viraj Ravani" data-post="GRAPHICS MEMBER" data-dept="GRAPHICS TEAM" data-institute="KJSP" data-img="Team Pics Converted/Viraj_.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Viraj_.jpg" alt="Viraj Ravani" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Viraj_.jpg" alt="Viraj Ravani">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Viraj Ravani</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">GRAPHICS MEMBER</p>
-                        <p class="text-xs text-gray-500">KJSP</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">GRAPHICS</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Viraj Ravani</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">GRAPHICS MEMBER</p>
+                            <p class="text-[10px] text-gray-500">KJSP</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Gunjan Israni" data-post="GRAPHICS MEMBER" data-dept="GRAPHICS TEAM" data-institute="SSBAS" data-img="Team Pics Converted/Gunjan.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Gunjan.jpg" alt="Gunjan Israni" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Gunjan.jpg" alt="Gunjan Israni">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Gunjan Israni</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">GRAPHICS MEMBER</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">GRAPHICS</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Gunjan Israni</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">GRAPHICS MEMBER</p>
+                            <p class="text-[10px] text-gray-500">SSBAS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Nitin Choudhary" data-post="PHOTO & VIDEO MEMBER" data-dept="PHOTO & VIDEO TEAM" data-institute="KJSSC" data-img="Team Pics Converted/Nitin.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Nitin.jpg" alt="Nitin Choudhary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Nitin.jpg" alt="Nitin Choudhary">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Nitin Choudhary</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">PHOTO & VIDEO MEMBER</p>
-                        <p class="text-xs text-gray-500">KJSSC</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">PHOTO & VIDEO</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Nitin Choudhary</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">PHOTO & VIDEO MEMBER</p>
+                            <p class="text-[10px] text-gray-500">KJSSC</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Vidisha Tayade" data-post="SOCIAL MEDIA MEMBER" data-dept="SOCIAL MEDIA TEAM" data-institute="SSHSS" data-img="Team Pics Converted/Vidisha.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Vidisha.jpg" alt="Vidisha Tayade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Vidisha.jpg" alt="Vidisha Tayade">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Vidisha Tayade</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">SOCIAL MEDIA MEMBER</p>
-                        <p class="text-xs text-gray-500">SSHSS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">SOCIAL MEDIA</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Vidisha Tayade</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">SOCIAL MEDIA MEMBER</p>
+                            <p class="text-[10px] text-gray-500">SSHSS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Vaishnavi Dhotre" data-post="SOCIAL MEDIA MEMBER" data-dept="SOCIAL MEDIA TEAM" data-institute="SSBAS" data-img="Team Pics Converted/Vaishnavi.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Vaishnavi.jpg" alt="Vaishnavi Dhotre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Vaishnavi.jpg" alt="Vaishnavi Dhotre">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Vaishnavi Dhotre</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">SOCIAL MEDIA MEMBER</p>
-                        <p class="text-xs text-gray-500">SSBAS</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">SOCIAL MEDIA</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Vaishnavi Dhotre</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">SOCIAL MEDIA MEMBER</p>
+                            <p class="text-[10px] text-gray-500">SSBAS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-full sm:w-60 lg:w-64"
                          data-name="Shravani Mohide" data-post="OPERATIONS MEMBER" data-dept="OPERATION TEAM" data-institute="KJSCE" data-img="Team Pics Converted/Shravani.jpg">
-                        <div class="w-40 h-52 overflow-hidden bg-[#f7f7f7] mb-4">
-                            <img src="Team Pics Converted/Shravani.jpg" alt="Shravani Mohide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Shravani.jpg" alt="Shravani Mohide">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-sm">Shravani Mohide</h4>
-                        <p class="text-xs font-semibold text-[#9d2235]">OPERATIONS MEMBER</p>
-                        <p class="text-xs text-gray-500">KJSCE</p>
+                        <div class="text-left px-2">
+                            <span class="dept-tag">OPERATIONS</span>
+                            <h4 class="font-serif text-lg font-bold text-gray-900 mb-1 group-hover:text-[#9d2235] transition-colors">Shravani Mohide</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] mb-1 uppercase tracking-wider">OPERATIONS MEMBER</p>
+                            <p class="text-[10px] text-gray-500">KJSCE</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Crew -->
             <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Crew</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-items-center">
-                    <div class="text-center group team-card cursor-pointer"
+                <div class="flex items-center gap-4 mb-12">
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 px-4 italic">Team Crew</h2>
+                    <div class="h-px bg-gray-200 flex-grow"></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Dhruvi Patel" data-post="CREW" data-dept="CONTENT TEAM" data-institute="SSD" data-img="Team Pics Converted/Dhruvi.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Dhruvi.jpg" alt="Dhruvi Patel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Dhruvi.jpg" alt="Dhruvi Patel">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Dhruvi Patel</h4>
-                        <p class="text-xs text-[#9d2235]">CONTENT</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Dhruvi Patel</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">CONTENT</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Khushi Brahmbhatt" data-post="CREW" data-dept="GRAPHICS TEAM" data-institute="SSBAS" data-img="Team Pics Converted/ID template  (80 x 130 mm)_20251126_173043_0000.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/ID template  (80 x 130 mm)_20251126_173043_0000.jpg" alt="Khushi Brahmbhatt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/ID template  (80 x 130 mm)_20251126_173043_0000.jpg" alt="Khushi Brahmbhatt">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Khushi Brahmbhatt</h4>
-                        <p class="text-xs text-[#9d2235]">GRAPHICS</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Khushi Brahmbhatt</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">GRAPHICS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Afifa Waghu" data-post="CREW" data-dept="PHOTO & VIDEO TEAM" data-institute="SSBAS" data-img="Team Pics Converted/Afifa.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Afifa.jpg" alt="Afifa Waghu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Afifa.jpg" alt="Afifa Waghu">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Afifa Waghu</h4>
-                        <p class="text-xs text-[#9d2235]">PHOTO & VIDEO</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Afifa Waghu</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">PHOTO & VIDEO</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Deven Patel" data-post="CREW" data-dept="PHOTO & VIDEO TEAM" data-institute="SK SOMAIYA" data-img="Team Pics Converted/Deven.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Deven.jpg" alt="Deven Patel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Deven.jpg" alt="Deven Patel">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Deven Patel</h4>
-                        <p class="text-xs text-[#9d2235]">PHOTO & VIDEO</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Deven Patel</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">PHOTO & VIDEO</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Krit Shah" data-post="CREW" data-dept="PHOTO & VIDEO TEAM" data-institute="KJSAC" data-img="Team Pics Converted/Krit ID.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Krit ID.jpg" alt="Krit Shah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Krit ID.jpg" alt="Krit Shah">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Krit Shah</h4>
-                        <p class="text-xs text-[#9d2235]">PHOTO & VIDEO</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Krit Shah</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">PHOTO & VIDEO</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Lakshita Tiwari" data-post="CREW" data-dept="PHOTO & VIDEO TEAM" data-institute="SSHSS" data-img="Team Pics Converted/Lakshita.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Lakshita.jpg" alt="Lakshita Tiwari" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Lakshita.jpg" alt="Lakshita Tiwari">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Lakshita Tiwari</h4>
-                        <p class="text-xs text-[#9d2235]">PHOTO & VIDEO</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Lakshita Tiwari</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">PHOTO & VIDEO</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Mahek Agnihotri" data-post="CREW" data-dept="SOCIAL MEDIA TEAM" data-institute="SSHSS" data-img="Team Pics Converted/Mahek.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Mahek.jpg" alt="Mahek Agnihotri" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Mahek.jpg" alt="Mahek Agnihotri">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Mahek Agnihotri</h4>
-                        <p class="text-xs text-[#9d2235]">SOCIAL MEDIA</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Mahek Agnihotri</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">SOCIAL MEDIA</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Diksha More" data-post="CREW" data-dept="SOCIAL MEDIA TEAM" data-institute="SSBAS" data-img="Team Pics Converted/Diksha.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Diksha.jpg" alt="Diksha More" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Diksha.jpg" alt="Diksha More">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Diksha More</h4>
-                        <p class="text-xs text-[#9d2235]">SOCIAL MEDIA</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Diksha More</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">SOCIAL MEDIA</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Meher Shah" data-post="CREW" data-dept="SOCIAL MEDIA TEAM" data-institute="SSHSS" data-img="Team Pics Converted/Meher.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Meher.jpg" alt="Meher Shah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Meher.jpg" alt="Meher Shah">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Meher Shah</h4>
-                        <p class="text-xs text-[#9d2235]">SOCIAL MEDIA</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Meher Shah</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">SOCIAL MEDIA</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Siddhi Kamble" data-post="CREW" data-dept="SOCIAL MEDIA TEAM" data-institute="SSBAS" data-img="Team Pics Converted/Siddhi.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Siddhi.jpg" alt="Siddhi Kamble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Siddhi.jpg" alt="Siddhi Kamble">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Siddhi Kamble</h4>
-                        <p class="text-xs text-[#9d2235]">SOCIAL MEDIA</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Siddhi Kamble</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">SOCIAL MEDIA</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Saachi Chunekar" data-post="CREW" data-dept="PR TEAM" data-institute="SKSCAC" data-img="Team Pics Converted/Sachi.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Sachi.jpg" alt="Saachi Chunekar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Sachi.jpg" alt="Saachi Chunekar">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Saachi Chunekar</h4>
-                        <p class="text-xs text-[#9d2235]">PR</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Saachi Chunekar</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">PR</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Tanisha Bhagat" data-post="CREW" data-dept="OPERATIONS TEAM" data-institute="KJSAC" data-img="Team Pics Converted/Tanisha.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Tanisha.jpg" alt="Tanisha Bhagat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Tanisha.jpg" alt="Tanisha Bhagat">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Tanisha Bhagat</h4>
-                        <p class="text-xs text-[#9d2235]">OPERATIONS</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Tanisha Bhagat</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">OPERATIONS</p>
+                        </div>
                     </div>
-                    <div class="text-center group team-card cursor-pointer"
+                    <div class="team-card group cursor-pointer w-[calc(50%-12px)] md:w-40 lg:w-48"
                          data-name="Laxman Choudhary" data-post="CREW" data-dept="OPERATIONS TEAM" data-institute="KJSSC" data-img="Team Pics Converted/Laxman.jpg">
-                        <div class="w-32 h-44 overflow-hidden bg-[#f7f7f7] mb-3">
-                            <img src="Team Pics Converted/Laxman.jpg" alt="Laxman Choudhary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="team-image-container">
+                            <img src="Team Pics Converted/Laxman.jpg" alt="Laxman Choudhary">
                         </div>
-                        <h4 class="font-bold text-gray-900 text-xs">Laxman Choudhary</h4>
-                        <p class="text-xs text-[#9d2235]">OPERATIONS</p>
+                        <div class="text-left px-2">
+                            <h4 class="font-serif text-base font-bold text-gray-900 mb-0 group-hover:text-[#9d2235] transition-colors">Laxman Choudhary</h4>
+                            <p class="text-[10px] font-bold text-[#9d2235] uppercase">OPERATIONS</p>
+                        </div>
                     </div>
                 </div>
             </div>
